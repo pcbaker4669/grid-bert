@@ -1,0 +1,99 @@
+# =========================================================
+# GridBERT .gitignore
+# =========================================================
+
+# Python virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# Python cache / compiled files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Testing / linting / type-checking caches
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# IDE / editor files
+.vscode/
+.idea/
+*.code-workspace
+
+# Windows / macOS system files
+Thumbs.db
+Desktop.ini
+.DS_Store
+
+# Logs and temporary files
+*.log
+*.tmp
+*.temp
+~$*
+*.bak
+
+# =========================================================
+# GridBERT source corpus and extracted data
+# Do not commit the raw public-document corpus or extracted text.
+# =========================================================
+raw/
+text/
+
+# Prepared MLM training datasets
+training/
+train.jsonl
+validation.jsonl
+
+# Fixed masked validation dataset
+# Regenerable from the validation split and seed.
+fixed_validation.jsonl
+
+# =========================================================
+# Trained models and checkpoints
+# These files are large and should not be stored in normal Git.
+# =========================================================
+models/
+checkpoints/
+checkpoint-*/
+
+*.safetensors
+*.bin
+*.pt
+*.pth
+*.ckpt
+
+# Hugging Face / Transformers caches
+.cache/
+huggingface/
+hf_cache/
+
+# =========================================================
+# Large document formats if accidentally copied into data folders
+# =========================================================
+raw/**/*.pdf
+raw/**/*.doc
+raw/**/*.docx
+
+# =========================================================
+# Keep these project artifacts in Git:
+#
+# README.md
+# requirements.txt
+# scripts/
+# benchmarks/
+# results/
+# docs/
+# experiment manifests such as experiment_manifest.json
+# grid_domain_benchmark.jsonl
+# grid_domain_benchmark_results.csv
+# grid_domain_benchmark_summary.json
+# fixed_mask_results.json
+# =========================================================
