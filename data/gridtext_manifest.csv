@@ -1,0 +1,66 @@
+source,filename,pages,characters,words,bert_tokens,text_file
+doe,2026 DOE 202(c) Orders _ Department of Energy.pdf,18,32778,5266,7747,D:\GridBERT\text\doe\2026 DOE 202(c) Orders _ Department of Energy.txt
+doe,DOE Final EO Report (REVISED OCT 27).pdf,73,121714,18497,34514,D:\GridBERT\text\doe\DOE Final EO Report (REVISED OCT 27).txt
+doe,doe-emergency-order-202-26-24.pdf,11,29046,4181,7009,D:\GridBERT\text\doe\doe-emergency-order-202-26-24.txt
+doe,doe-emergency-order-no-202-26-23pdf.pdf,11,23903,3400,4815,D:\GridBERT\text\doe\doe-emergency-order-no-202-26-23pdf.txt
+doe,eo-14262.pdf,2,5820,887,1208,D:\GridBERT\text\doe\eo-14262.txt
+doe,motion-intervene-and-request-rehearing-natural-resources-defense-council-citizens-4.pdf,130,229749,33904,56989,D:\GridBERT\text\doe\motion-intervene-and-request-rehearing-natural-resources-defense-council-citizens-4.txt
+doe,national-transmission-needs-study-draft-july-2026.pdf,112,262370,35260,60215,D:\GridBERT\text\doe\national-transmission-needs-study-draft-july-2026.txt
+doe,NationalTransmissionPlanningStudy-Chapter1.pdf,46,87651,11830,20115,D:\GridBERT\text\doe\NationalTransmissionPlanningStudy-Chapter1.txt
+doe,NationalTransmissionPlanningStudy-Chapter2.pdf,143,240889,33577,59540,D:\GridBERT\text\doe\NationalTransmissionPlanningStudy-Chapter2.txt
+doe,NationalTransmissionPlanningStudy-Chapter3.pdf,148,267249,37676,63238,D:\GridBERT\text\doe\NationalTransmissionPlanningStudy-Chapter3.txt
+doe,NationalTransmissionPlanningStudy-Chapter4.pdf,70,108033,16007,25273,D:\GridBERT\text\doe\NationalTransmissionPlanningStudy-Chapter4.txt
+doe,NationalTransmissionPlanningStudy-Chapter5.pdf,72,115043,16570,27688,D:\GridBERT\text\doe\NationalTransmissionPlanningStudy-Chapter5.txt
+doe,NationalTransmissionPlanningStudy-Chapter6.pdf,17,27730,3818,5258,D:\GridBERT\text\doe\NationalTransmissionPlanningStudy-Chapter6.txt
+doe,NationalTransmissionPlanningStudy-ExecutiveSummary.pdf,37,67852,9292,13782,D:\GridBERT\text\doe\NationalTransmissionPlanningStudy-ExecutiveSummary.txt
+doe,pjms-202c-application-202-26-35.pdf,6,13275,2008,2903,D:\GridBERT\text\doe\pjms-202c-application-202-26-35.txt
+ferc,23_Summer-Assessment_0517_1745.pdf,55,189284,27305,42004,D:\GridBERT\text\ferc\23_Summer-Assessment_0517_1745.txt
+ferc,24_Energy-Markets-Primer_0117_DIGITAL_0.pdf,152,560893,108508,135267,D:\GridBERT\text\ferc\24_Energy-Markets-Primer_0117_DIGITAL_0.txt
+ferc,24_Summer Assessment_0523_0940.pdf,52,151675,21284,34485,D:\GridBERT\text\ferc\24_Summer Assessment_0523_0940.txt
+ferc,24_Winter-Storm_Elliot_0207_UPDATE.pdf,167,423049,62654,87492,D:\GridBERT\text\ferc\24_Winter-Storm_Elliot_0207_UPDATE.txt
+ferc,25_Annual Assessment of Demand Response_1212.pdf,45,99076,13771,25449,D:\GridBERT\text\ferc\25_Annual Assessment of Demand Response_1212.txt
+ferc,25_Arctic Storms Performance Review_0416.pdf,35,94116,13905,18451,D:\GridBERT\text\ferc\25_Arctic Storms Performance Review_0416.txt
+ferc,26_State-of-the-Market_0324_1430.pdf,51,117301,17190,28476,D:\GridBERT\text\ferc\26_State-of-the-Market_0324_1430.txt
+ferc,26_Summer Assessment_0529.pdf,33,69534,10075,15678,D:\GridBERT\text\ferc\26_Summer Assessment_0529.txt
+ferc,A3_State of the Markets 2023_Presentation_0320_1715.pdf,10,2171,333,489,D:\GridBERT\text\ferc\A3_State of the Markets 2023_Presentation_0320_1715.txt
+ferc,Interregional Transfer Capability Study_FERC.pdf,268,527186,79526,123755,D:\GridBERT\text\ferc\Interregional Transfer Capability Study_FERC.txt
+ferc,Summer Assessment 2025_june 2025.pdf,49,78474,10996,17231,D:\GridBERT\text\ferc\Summer Assessment 2025_june 2025.txt
+ferc,Winter Assessment 2024-2025 Long Version.pdf,37,59196,8371,13253,D:\GridBERT\text\ferc\Winter Assessment 2024-2025 Long Version.txt
+ferc,Winter Assessment 2025-2026 Long Version_Clean.docx.pdf,51,84799,11786,19111,D:\GridBERT\text\ferc\Winter Assessment 2025-2026 Long Version_Clean.docx.txt
+pjm,2025-annual-state-of-the-market-report-for-pjm.pdf,68,47873,7169,20531,D:\GridBERT\text\pjm\2025-annual-state-of-the-market-report-for-pjm.txt
+pjm,2026-2027-bra-report.pdf,20,34593,5295,11051,D:\GridBERT\text\pjm\2026-2027-bra-report.txt
+pjm,2027-2028-bra-report.pdf,20,35725,5493,11376,D:\GridBERT\text\pjm\2027-2028-bra-report.txt
+pjm,2028-2029-bra-results-report.pdf,20,34552,5316,10910,D:\GridBERT\text\pjm\2028-2029-bra-results-report.txt
+pjm,2029-2030-planning-period-parameters-for-base-residual-auction-report.pdf,9,14920,2358,4424,D:\GridBERT\text\pjm\2029-2030-planning-period-parameters-for-base-residual-auction-report.txt
+nerc,1991-ltra.pdf,80,0,0,0,D:\GridBERT\text\nerc\ltra\1991-ltra.txt
+nerc,1992-ltra.pdf,65,0,0,0,D:\GridBERT\text\nerc\ltra\1992-ltra.txt
+nerc,1993-ltra.pdf,41,0,0,0,D:\GridBERT\text\nerc\ltra\1993-ltra.txt
+nerc,1994-ltra.pdf,41,0,0,0,D:\GridBERT\text\nerc\ltra\1994-ltra.txt
+nerc,1995-ltra.pdf,48,0,0,0,D:\GridBERT\text\nerc\ltra\1995-ltra.txt
+nerc,1996-ltra.pdf,51,0,0,0,D:\GridBERT\text\nerc\ltra\1996-ltra.txt
+nerc,2000ras-final-11200.pdf,77,227956,33902,45893,D:\GridBERT\text\nerc\ltra\2000ras-final-11200.txt
+nerc,2009_ltra_v1_1_errata.pdf,448,1205236,178448,263997,D:\GridBERT\text\nerc\ltra\2009_ltra_v1_1_errata.txt
+nerc,2010_ltra_v2-.pdf,431,1099728,161335,235094,D:\GridBERT\text\nerc\ltra\2010_ltra_v2-.txt
+nerc,2011-ltra_final.pdf,556,1464090,217695,321872,D:\GridBERT\text\nerc\ltra\2011-ltra_final.txt
+nerc,2012_ltra.pdf,337,1265163,189553,313609,D:\GridBERT\text\nerc\ltra\2012_ltra.txt
+nerc,2013_ltra_final.pdf,178,580118,86340,129536,D:\GridBERT\text\nerc\ltra\2013_ltra_final.txt
+nerc,2014ltra_eratta.pdf,115,413871,61010,94678,D:\GridBERT\text\nerc\ltra\2014ltra_eratta.txt
+nerc,2015ltra---final-report.pdf,103,365942,53550,82079,D:\GridBERT\text\nerc\ltra\2015ltra---final-report.txt
+nerc,97ras.pdf,55,173848,26046,34526,D:\GridBERT\text\nerc\ltra\97ras.txt
+nerc,98ras.pdf,69,202891,30327,41209,D:\GridBERT\text\nerc\ltra\98ras.txt
+nerc,99ras.pdf,88,266955,39946,54472,D:\GridBERT\text\nerc\ltra\99ras.txt
+nerc,ltra2003.pdf,88,238673,34721,53093,D:\GridBERT\text\nerc\ltra\ltra2003.txt
+nerc,ltra2004.pdf,91,250823,36792,54553,D:\GridBERT\text\nerc\ltra\ltra2004.txt
+nerc,ltra2005.pdf,109,250224,36636,56568,D:\GridBERT\text\nerc\ltra\ltra2005.txt
+nerc,ltra2006.pdf,134,331642,48383,74686,D:\GridBERT\text\nerc\ltra\ltra2006.txt
+nerc,ltra2007.pdf,238,602729,89023,131326,D:\GridBERT\text\nerc\ltra\ltra2007.txt
+nerc,ltra2008v1_2.pdf,303,768785,114375,169116,D:\GridBERT\text\nerc\ltra\ltra2008v1_2.txt
+nerc,nerc_ltra_12132017_final.pdf,82,224693,34101,51057,D:\GridBERT\text\nerc\ltra\nerc_ltra_12132017_final.txt
+nerc,nerc_ltra_2018_12202018.pdf,151,379220,57739,90471,D:\GridBERT\text\nerc\ltra\nerc_ltra_2018_12202018.txt
+nerc,nerc_ltra_2019.pdf,114,269854,41433,65142,D:\GridBERT\text\nerc\ltra\nerc_ltra_2019.txt
+nerc,nerc_ltra_2020.pdf,167,410663,63426,98085,D:\GridBERT\text\nerc\ltra\nerc_ltra_2020.txt
+nerc,nerc_ltra_2021.pdf,126,343957,51590,81561,D:\GridBERT\text\nerc\ltra\nerc_ltra_2021.txt
+nerc,nerc_ltra_2022.pdf,111,322913,48496,76261,D:\GridBERT\text\nerc\ltra\nerc_ltra_2022.txt
+nerc,nerc_ltra_2023.pdf,135,406586,60807,94081,D:\GridBERT\text\nerc\ltra\nerc_ltra_2023.txt
+nerc,nerc_ltra_2024.pdf,149,441025,66249,102039,D:\GridBERT\text\nerc\ltra\nerc_ltra_2024.txt
+nerc,nerc_ltra_2025.pdf,182,600930,88837,134040,D:\GridBERT\text\nerc\ltra\nerc_ltra_2025.txt

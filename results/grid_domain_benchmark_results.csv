@@ -1,0 +1,51 @@
+category,prompt,expected,base_rank,base_hit1,base_hit5,base_probability,base_top1,grid_rank,grid_hit1,grid_hit5,grid_probability,grid_top1
+markets,PJM operates a wholesale electricity [MASK].,market,5,0,1,0.08247452974319458,business,1,1,1,0.923740565776825,market
+markets,Electricity generators submit offers into the wholesale [MASK].,market,1,1,1,0.73100346326828,market,1,1,1,0.8749677538871765,market
+markets,Locational marginal pricing reflects electricity [MASK].,prices,5,0,1,0.03466729447245598,demand,5,0,1,0.028586825355887413,demand
+markets,The capacity market helps ensure adequate generation [MASK].,resources,11,0,0,0.003672630526125431,capacity,1,1,1,0.3536260724067688,resources
+markets,Generators compete to sell electricity in the regional [MASK].,market,1,1,1,0.5050281882286072,market,2,0,1,0.3474753201007843,markets
+reliability,NERC establishes reliability [MASK].,standards,1,1,1,0.3319004476070404,standards,1,1,1,0.5922008156776428,standards
+reliability,A shortage of generation can threaten grid [MASK].,reliability,3,0,1,0.07165026664733887,capacity,1,1,1,0.9093519449234009,reliability
+reliability,Grid operators must maintain system [MASK].,reliability,1,1,1,0.11253656446933746,reliability,1,1,1,0.8914507627487183,reliability
+reliability,Resource shortages may create reliability [MASK].,risks,6,0,0,0.006176738068461418,problems,1,1,1,0.3323708772659302,risks
+reliability,NERC evaluates the long-term reliability of the bulk power [MASK].,system,3,0,1,0.039951350539922714,supply,1,1,1,0.9885861277580261,system
+resource_adequacy,The utility must maintain adequate generation [MASK].,capacity,1,1,1,0.8379645347595215,capacity,2,0,1,0.2571030855178833,reserves
+resource_adequacy,Resource adequacy requires sufficient generating [MASK].,capacity,1,1,1,0.6575062870979309,capacity,1,1,1,0.7397869825363159,capacity
+resource_adequacy,Peak demand requires adequate generation [MASK].,resources,13,0,0,0.0029734645504504442,capacity,1,1,1,0.4960225820541382,resources
+resource_adequacy,Planning reserves provide additional generation [MASK].,capacity,1,1,1,0.6142630577087402,capacity,2,0,1,0.22345663607120514,resources
+resource_adequacy,Insufficient capacity can create a resource adequacy [MASK].,risk,12,0,0,0.003084596712142229,problem,1,1,1,0.2986113429069519,risk
+transmission,Electricity moves across high-voltage transmission [MASK].,lines,1,1,1,0.9390226602554321,lines,1,1,1,0.897566020488739,lines
+transmission,Transmission constraints can restrict power [MASK].,flows,26,0,0,0.004112644586712122,transmission,3,0,1,0.17703978717327118,transfers
+transmission,New transmission can increase transfer [MASK].,capability,38,0,0,0.001263766665942967,rates,1,1,1,0.7063828706741333,capability
+transmission,The transmission system connects generators with electrical [MASK].,load,136,0,0,0.00034323419095017016,generators,8,0,0,0.03112705983221531,generation
+transmission,Transmission planning identifies future system [MASK].,needs,2,0,1,0.05802638828754425,requirements,1,1,1,0.6842476725578308,needs
+congestion,Transmission constraints can create grid [MASK].,congestion,2,0,1,0.058278799057006836,##s,1,1,1,0.4083826541900635,congestion
+congestion,Congestion occurs when transmission capacity is [MASK].,limited,2,0,1,0.13456231355667114,low,1,1,1,0.27165061235427856,limited
+congestion,Transmission congestion can increase electricity [MASK].,prices,4,0,1,0.06585134565830231,consumption,6,0,0,0.03194861114025116,demand
+congestion,Congestion reflects constraints on electricity [MASK].,flows,74,0,0,0.00046732716145925224,supply,17,0,0,0.003873250214383006,supply
+congestion,Grid upgrades can reduce transmission [MASK].,congestion,6,0,0,0.01788068190217018,capacity,1,1,1,0.6603575348854065,congestion
+dispatch,The grid operator dispatched additional generation [MASK].,resources,26,0,0,0.004792507272213697,units,1,1,1,0.2719230651855469,resources
+dispatch,Generators are dispatched to meet electricity [MASK].,demand,1,1,1,0.7635747194290161,demand,1,1,1,0.758213222026825,demand
+dispatch,Economic dispatch determines which generators should [MASK].,operate,3,0,1,0.06516141444444656,work,2,0,1,0.13680137693881989,participate
+dispatch,The system operator dispatches generating [MASK].,units,2,0,1,0.11584107577800751,power,1,1,1,0.44732415676116943,units
+dispatch,Additional resources were dispatched to maintain system [MASK].,reliability,7,0,0,0.04377662017941475,security,1,1,1,0.9107577204704285,reliability
+load,Electricity demand is commonly called electrical [MASK].,load,14,0,0,0.0037037141155451536,demand,4,0,1,0.022001050412654877,demand
+load,Peak load represents the highest electricity [MASK].,demand,1,1,1,0.23133617639541626,demand,1,1,1,0.8036569356918335,demand
+load,System load increases when electricity demand [MASK].,rises,3,0,1,0.09310699999332428,increases,8,0,0,0.012646511197090149,increases
+load,Utilities forecast future electricity [MASK].,demand,1,1,1,0.19118130207061768,demand,1,1,1,0.6006355881690979,demand
+load,Data centers can significantly increase electricity [MASK].,demand,3,0,1,0.16350877285003662,consumption,3,0,1,0.2615458071231842,use
+generation,Power plants generate electrical [MASK].,energy,2,0,1,0.09380277246236801,power,1,1,1,0.775788426399231,energy
+generation,A generator converts energy into electricity for the [MASK].,grid,14,0,0,0.009176749736070633,building,1,1,1,0.14836126565933228,grid
+generation,Generation resources supply electricity to meet [MASK].,demand,1,1,1,0.9799797534942627,demand,1,1,1,0.9830074310302734,demand
+generation,Retiring power plants reduces available generation [MASK].,capacity,1,1,1,0.570292592048645,capacity,1,1,1,0.49415016174316406,capacity
+generation,New generating units can increase electricity [MASK].,supply,10,0,0,0.009604400023818016,demand,10,0,0,0.009170674718916416,demand
+reserves,Operating reserves provide backup generation during system [MASK].,emergencies,66,0,0,0.0009124836651608348,operations,2,0,1,0.18055635690689087,disturbances
+reserves,Reserve capacity can respond when generation unexpectedly [MASK].,fails,1,1,1,0.4249928295612335,fails,1,1,1,0.3817345201969147,fails
+reserves,Grid operators maintain reserves to respond to unexpected [MASK].,events,4,0,1,0.10445750504732132,changes,1,1,1,0.626929759979248,events
+reserves,Emergency generation may be needed during capacity [MASK].,shortages,8,0,0,0.016236107796430588,increases,1,1,1,0.37358808517456055,shortages
+reserves,A reliability emergency may require additional generation [MASK].,resources,19,0,0,0.007288919296115637,equipment,1,1,1,0.5077531337738037,resources
+institutions,FERC regulates interstate transmission of electric [MASK].,energy,2,0,1,0.03040439262986183,power,1,1,1,0.5159134864807129,energy
+institutions,NERC develops reliability standards for the bulk power [MASK].,system,7,0,0,0.02064513973891735,supply,1,1,1,0.9300342202186584,system
+institutions,PJM coordinates electricity markets and grid [MASK].,operations,7,0,0,0.023340962827205658,##s,1,1,1,0.563603401184082,operations
+institutions,DOE may issue emergency orders during electricity [MASK].,emergencies,3,0,1,0.07416625320911407,blackout,1,1,1,0.7462965846061707,emergencies
+institutions,Regional transmission organizations coordinate wholesale electricity [MASK].,markets,20,0,0,0.0036609971430152655,distribution,1,1,1,0.6146800518035889,markets
