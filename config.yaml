@@ -1,9 +1,9 @@
 project:
   name: "GridBERT"
-  version: "v0.2"
+  version: "v0.3"
 
 paths:
-  data_root: "D:/GridBERT_v0_2"
+  data_root: "D:/GridBERT_v0_3"
 
   raw_dir: "raw"
   text_dir: "text"
@@ -11,24 +11,24 @@ paths:
 
   train_file: "training/train.jsonl"
   validation_file: "training/validation.jsonl"
-  corpus_manifest: "gridtext_manifest_v02.csv"
+  corpus_manifest: "gridtext_manifest_v03.csv"
 
-  model_output_dir: "models/GridBERT-v0.2"
-  grid_model_dir: "models/GridBERT-v0.2/final"
-  trained_model_dir: "models/GridBERT-v0.2/final"
+  model_output_dir: "models/GridBERT-v0.3"
+  grid_model_dir: "models/GridBERT-v0.3/final"
+  trained_model_dir: "models/GridBERT-v0.3/final"
 
-  experiment_dir: "experiments/GridBERT-v0.2"
-  benchmark_file: "experiments/GridBERT-v0.2/grid_domain_benchmark.jsonl"
-  benchmark_results_csv: "experiments/GridBERT-v0.2/grid_domain_benchmark_results.csv"
-  benchmark_summary_json: "experiments/GridBERT-v0.2/grid_domain_benchmark_summary.json"
-  fixed_validation_file: "experiments/GridBERT-v0.2/fixed_validation.jsonl"
-  fixed_mask_results_file: "experiments/GridBERT-v0.2/fixed_mask_results.json"
+  experiment_dir: "experiments/GridBERT-v0.3"
+  benchmark_file: "experiments/GridBERT-v0.3/grid_domain_benchmark.jsonl"
+  benchmark_results_csv: "experiments/GridBERT-v0.3/grid_domain_benchmark_results.csv"
+  benchmark_summary_json: "experiments/GridBERT-v0.3/grid_domain_benchmark_summary.json"
+  fixed_validation_file: "experiments/GridBERT-v0.3/fixed_validation.jsonl"
+  fixed_mask_results_file: "experiments/GridBERT-v0.3/fixed_mask_results.json"
 
 models:
   tokenizer_model: "google-bert/bert-base-uncased"
   training_start_model: "google-bert/bert-base-uncased"
   reference_model: "google-bert/bert-base-uncased"
-  trained_model_label: "GridBERT v0.2"
+  trained_model_label: "GridBERT v0.3"
 
 
 dataset:
