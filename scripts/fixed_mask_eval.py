@@ -6,23 +6,39 @@ import random
 import torch
 import torch.nn.functional as F
 from transformers import AutoTokenizer, AutoModelForMaskedLM
+from config_loader import load_config, data_path
 
+config = load_config()
 
-BASE_MODEL = "google-bert/bert-base-uncased"
-GRID_MODEL = r"D:\GridBERT\models\GridBERT-v0.1\final"
+BASE_MODEL = config["models"]["reference_model"]
 
-VALID_FILE = Path(r"D:\GridBERT\training\validation.jsonl")
-
-OUTPUT_DIR = Path(
-    r"D:\GridBERT\experiments\GridBERT-v0.1"
+GRID_MODEL = str(
+    data_path(config, "trained_model_dir")
 )
 
-FIXED_FILE = OUTPUT_DIR / "fixed_validation.jsonl"
-RESULT_FILE = OUTPUT_DIR / "fixed_mask_results.json"
+VALID_FILE = data_path(
+    config,
+    "validation_file"
+)
 
-SEED = 42
-MLM_PROBABILITY = 0.15
-BATCH_SIZE = 2
+OUTPUT_DIR = data_path(
+    config,
+    "experiment_dir"
+)
+
+FIXED_FILE = data_path(
+    config,
+    "fixed_validation_file"
+)
+
+RESULT_FILE = data_path(
+    config,
+    "fixed_mask_results_file"
+)
+
+SEED = config["evaluation"]["fixed_mask_seed"]
+MLM_PROBABILITY = config["evaluation"]["fixed_mask_probability"]
+BATCH_SIZE = config["evaluation"]["fixed_mask_batch_size"]
 
 OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
 

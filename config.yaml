@@ -1,0 +1,59 @@
+project:
+  name: "GridBERT"
+  version: "v0.2"
+
+paths:
+  data_root: "D:/GridBERT_v0_2"
+
+  raw_dir: "raw"
+  text_dir: "text"
+  training_dir: "training"
+
+  train_file: "training/train.jsonl"
+  validation_file: "training/validation.jsonl"
+  corpus_manifest: "gridtext_manifest_v02.csv"
+
+  model_output_dir: "models/GridBERT-v0.2"
+  grid_model_dir: "models/GridBERT-v0.2/final"
+  trained_model_dir: "models/GridBERT-v0.2/final"
+
+  experiment_dir: "experiments/GridBERT-v0.2"
+  benchmark_file: "experiments/GridBERT-v0.2/grid_domain_benchmark.jsonl"
+  benchmark_results_csv: "experiments/GridBERT-v0.2/grid_domain_benchmark_results.csv"
+  benchmark_summary_json: "experiments/GridBERT-v0.2/grid_domain_benchmark_summary.json"
+  fixed_validation_file: "experiments/GridBERT-v0.2/fixed_validation.jsonl"
+  fixed_mask_results_file: "experiments/GridBERT-v0.2/fixed_mask_results.json"
+
+models:
+  tokenizer_model: "google-bert/bert-base-uncased"
+  training_start_model: "google-bert/bert-base-uncased"
+  reference_model: "google-bert/bert-base-uncased"
+  trained_model_label: "GridBERT v0.2"
+
+
+dataset:
+  content_length: 254
+  min_final_fragment: 32
+  validation_fraction: 0.10
+  seed: 42
+
+  fixed_validation_documents:
+    - "nerc/ltra/99ras.txt"
+    - "nerc/ltra/nerc_ltra_2021.txt"
+    - "doe/NationalTransmissionPlanningStudy-Chapter1.txt"
+    - "ferc/A3_State of the Markets 2023_Presentation_0320_1715.txt"
+    - "nerc/ltra/ltra2004.txt"
+    - "nerc/ltra/2013_ltra_final.txt"
+
+training:
+  epochs: 3
+  learning_rate: 2.0e-5
+  mlm_probability: 0.15
+  weight_decay: 0.01
+  seed: 42
+
+evaluation:
+  fixed_mask_seed: 42
+  fixed_mask_probability: 0.15
+  fixed_mask_batch_size: 2
+  benchmark_top_k: 5

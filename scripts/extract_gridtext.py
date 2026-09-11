@@ -1,3 +1,4 @@
+from config_loader import load_config, data_path
 from pathlib import Path
 import csv
 import re
@@ -5,15 +6,17 @@ import re
 import pymupdf as fitz
 from transformers import AutoTokenizer
 
+config = load_config()
 
-RAW_DIR = Path(r"D:\GridBERT\raw")
-TEXT_DIR = Path(r"D:\GridBERT\text")
-OUTPUT_CSV = Path(r"D:\GridBERT\gridtext_manifest.csv")
+RAW_DIR = data_path(config, "raw_dir")
+TEXT_DIR = data_path(config, "text_dir")
+OUTPUT_CSV = data_path(config, "corpus_manifest")
+
+TOKENIZER_MODEL = config["models"]["tokenizer_model"]
 
 tokenizer = AutoTokenizer.from_pretrained(
-    "google-bert/bert-base-uncased"
+    TOKENIZER_MODEL
 )
-
 
 def clean_text(text):
     text = re.sub(r"\s+", " ", text)

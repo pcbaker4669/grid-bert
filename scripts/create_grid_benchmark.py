@@ -1,8 +1,17 @@
 import json
 from pathlib import Path
+from config_loader import load_config, data_path
 
-OUTPUT = Path(
-    r"D:\GridBERT\experiments\GridBERT-v0.1\grid_domain_benchmark.jsonl"
+config = load_config()
+
+OUTPUT = data_path(
+    config,
+    "benchmark_file"
+)
+
+OUTPUT.parent.mkdir(
+    parents=True,
+    exist_ok=True
 )
 
 prompts = [

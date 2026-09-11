@@ -1,7 +1,12 @@
 from transformers import pipeline
+from config_loader import load_config, data_path
 
-BASE_MODEL = "google-bert/bert-base-uncased"
-GRID_MODEL = r"D:\GridBERT\models\GridBERT-v0.1\final"
+config = load_config()
+
+BASE_MODEL = config["models"]["reference_model"]
+GRID_MODEL = str(
+    data_path(config, "trained_model_dir")
+)
 
 print("Loading Base BERT...")
 base_bert = pipeline(

@@ -2,24 +2,33 @@ import json
 import csv
 from pathlib import Path
 from collections import defaultdict
-
+from config_loader import load_config, data_path
 import torch
 from transformers import AutoTokenizer, AutoModelForMaskedLM
 
 
-BASE_MODEL = "google-bert/bert-base-uncased"
-GRID_MODEL = r"D:\GridBERT\models\GridBERT-v0.1\final"
+config = load_config()
 
-BENCHMARK_FILE = Path(
-    r"D:\GridBERT\experiments\GridBERT-v0.1\grid_domain_benchmark.jsonl"
+BASE_MODEL = config["models"]["reference_model"]
+
+GRID_MODEL = str(
+    data_path(config, "trained_model_dir")
 )
 
-OUTPUT_DIR = Path(
-    r"D:\GridBERT\experiments\GridBERT-v0.1"
+BENCHMARK_FILE = data_path(
+    config,
+    "benchmark_file"
 )
 
-CSV_FILE = OUTPUT_DIR / "grid_domain_benchmark_results.csv"
-JSON_FILE = OUTPUT_DIR / "grid_domain_benchmark_summary.json"
+CSV_FILE = data_path(
+    config,
+    "benchmark_results_csv"
+)
+
+JSON_FILE = data_path(
+    config,
+    "benchmark_summary_json"
+)
 
 
 # ---------------------------------------------------------

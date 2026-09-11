@@ -1,4 +1,4 @@
-# GridBERT v0.1
+# GridBERT v0.2
 # Developed with Python 3.12
 
 transformers==5.16.1
@@ -7,3 +7,4 @@ accelerate
 pymupdf
 requests
 beautifulsoup4
+PyYAML

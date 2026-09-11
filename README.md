@@ -1,231 +1,288 @@
-# GridBERT
+# GridBERT v0.2
 
-GridBERT is a proof-of-concept domain-adapted BERT model designed to better represent the specialized language of the U.S. electric-power grid, including grid reliability, transmission planning, wholesale electricity markets, resource adequacy, generation, dispatch, and energy regulation.
+GridBERT v0.2 is the next development version of GridBERT, a domain-adapted BERT model designed to better represent the specialized language of the U.S. electric-power grid.
 
-GridBERT v0.1 was created by continuing masked-language-model pretraining of `google-bert/bert-base-uncased` on a curated corpus of public U.S. electric-grid documents from:
+The project focuses on technical, regulatory, market, and policy language related to:
 
-- U.S. Department of Energy (DOE)
-- Federal Energy Regulatory Commission (FERC)
-- North American Electric Reliability Corporation (NERC)
-- PJM Interconnection
-
-The primary research question was:
-
-> **How well does Base BERT understand specialized U.S. electric-grid policy language, and can domain-adaptive pretraining improve that understanding?**
-
-GridBERT v0.1 substantially outperformed Base BERT on both held-out masked-language modeling and a 50-prompt grid-domain benchmark.
-
----
-
-# 1. Project Motivation
-
-General-purpose BERT was pretrained on broad English-language corpora. It therefore understands many ordinary language relationships, but specialized technical terms can have meanings that differ substantially from general usage.
-
-Examples from the electric-grid domain include:
-
-- dispatch
-- load
-- congestion
-- thermal limits
-- resource adequacy
-- reserves
-- reliability
-- capacity
-- transmission constraints
+- grid reliability
+- transmission planning
 - wholesale electricity markets
+- resource adequacy
+- generation
+- dispatch
+- operating reserves
+- congestion
+- load
+- emergency grid actions
+- grid governance and regulation
 
-For example, Base BERT initially interpreted:
-
-```text
-The grid operator dispatched additional [MASK].
-```
-
-using ordinary-language concepts such as:
-
-```text
-workers
-vehicles
-troops
-firefighters
-volunteers
-```
-
-In electric-grid operations, however, `dispatch` normally refers to generation, units, resources, reserves, or power.
-
-GridBERT tests whether continued domain-specific pretraining can shift BERT's contextual representations toward electric-grid meanings.
+GridBERT v0.2 is being developed as an expanded and more systematic successor to GridBERT v0.1.
 
 ---
 
-# 2. GridBERT v0.1 Overview
+# 1. Research Goal
 
-GridBERT v0.1 uses:
+The main research question remains:
+
+> **Can domain-adaptive pretraining improve BERT's representation of specialized U.S. electric-grid language?**
+
+GridBERT v0.2 extends this question by asking whether a larger and more diverse grid-domain corpus can improve areas where GridBERT v0.1 remained comparatively weak.
+
+Current target areas include:
+
+- transmission constraints
+- congestion
+- load
+- dispatch
+- operating reserves
+- resource adequacy
+- grid institutional language
+
+---
+
+# 2. Relationship to GridBERT v0.1
+
+GridBERT v0.1 demonstrated that continued masked-language-model pretraining on a curated electric-grid corpus could substantially improve Base BERT's performance on grid-domain language.
+
+GridBERT v0.1 used:
+
+- 65 documents
+- 3,958,771 BERT tokens
+- 59 training documents
+- 6 validation documents
+- 14,265 training sequences
+- 1,343 validation sequences
+
+Its main evaluation results were:
+
+| Metric | Base BERT | GridBERT v0.1 |
+|---|---:|---:|
+| Fixed-mask perplexity | 14.06 | **4.19** |
+| Hits@1 | 28% | **72%** |
+| Hits@5 | 60% | **90%** |
+| MRR | 0.430 | **0.804** |
+
+These v0.1 results serve as the baseline for continued development.
+
+GridBERT v0.2 will be trained independently from Base BERT rather than by continuing training from the v0.1 model. This makes comparisons between v0.1 and v0.2 easier to interpret because both begin from the same pretrained Base BERT starting point.
+
+---
+
+# 3. Base Model
+
+GridBERT v0.2 starts from:
 
 ```text
-Base model:
 google-bert/bert-base-uncased
 ```
 
-The model architecture and tokenizer were retained.
+The model architecture and tokenizer are retained.
 
-GridBERT was created using **domain-adaptive pretraining**, also called continued pretraining.
+GridBERT v0.2 is created using **domain-adaptive pretraining** with masked language modeling.
 
-The model was not trained from scratch.
+The model is not trained from scratch.
 
-The basic process was:
+---
+
+# 4. Data Repository
+
+The GridBERT v0.2 data repository is separate from the v0.1 data repository.
 
 ```text
-Base BERT
-    |
-    v
-Public electric-grid documents
-    |
-    v
-PDF text extraction
-    |
-    v
-GridText corpus
-    |
-    v
-BERT tokenization
-    |
-    v
-256-token training sequences
-    |
-    v
-Masked Language Model training
-    |
-    v
-GridBERT v0.1
-    |
-    v
-Fixed-mask validation
-    |
-    v
-Grid-domain benchmark
+D:\GridBERT_v0_2
+```
+
+This separation protects the frozen GridBERT v0.1 corpus, experiment files, and trained model.
+
+Recommended data structure:
+
+```text
+D:\GridBERT_v0_2\
+├── raw\
+│   ├── academic\
+│   ├── doe\
+│   ├── ferc\
+│   ├── nerc\
+│   └── pjm\
+│
+├── text\
+├── training\
+├── experiments\
+├── models\
+└── gridtext_manifest_v02.csv
 ```
 
 ---
 
-# 3. Data Sources
+# 5. Corpus Expansion Strategy
 
-The GridText v0.1 corpus contains public documents from four major U.S. grid institutions.
+GridBERT v0.2 expands the original corpus rather than simply adding more documents at random.
 
-## DOE
+The primary objective is to improve coverage of areas where v0.1 showed weaker performance.
 
-Examples include:
+Priority topics include:
+
+- transmission constraints
+- transmission capability
+- congestion
+- load and load forecasting
+- dispatch
+- operating reserves
+- resource adequacy
+- market design
+- reliability-must-run concepts
+- grid institutional responsibilities
+
+The v0.2 corpus includes the original types of technical and regulatory sources used in v0.1, while adding more scholarly and policy-oriented material.
+
+---
+
+# 6. Source Categories
+
+## U.S. Department of Energy
+
+Potential and existing document types include:
 
 - National Transmission Planning Study
 - National Transmission Needs Study
-- Section 202(c) emergency orders
-- emergency-order applications and related filings
-- grid reliability and transmission policy reports
+- Federal Power Act Section 202(c) materials
+- emergency grid orders
+- reliability and transmission planning documents
 
-## FERC
+## Federal Energy Regulatory Commission
 
-Examples include:
+Potential and existing document types include:
 
-- Energy Markets Primer
-- Summer Energy Market and Electric Reliability Assessments
-- Winter Energy Market and Electric Reliability Assessments
-- Winter Storm Elliott review
-- Arctic storm performance reviews
-- demand-response reports
-- State of the Markets reports
-- Interregional Transfer Capability Study
+- electric power market materials
+- transmission siting materials
+- reliability assessments
+- market assessments
+- RTO/ISO materials
+- reliability-must-run materials
+- transmission and congestion studies
+- major market and regulatory orders
 
-## NERC
+Thin FERC landing pages should generally not be treated as full training documents unless they contain substantive explanatory text.
 
-The corpus contains multiple Long-Term Reliability Assessments covering several decades.
+Whenever possible, the substantive linked order, report, filing, or study should be preferred.
 
-These documents provide extensive terminology related to:
+## North American Electric Reliability Corporation
+
+NERC material provides language related to:
 
 - resource adequacy
-- generation capacity
 - reserve margins
 - reliability
+- load growth
 - transmission
-- electricity demand
+- generation capacity
 - regional reliability risks
 
-## PJM
+The v0.2 corpus should avoid unnecessary duplication of NERC material already heavily represented in v0.1 unless the new material adds useful coverage.
 
-Examples include:
+## PJM Interconnection
 
-- State of the Market reports
-- Base Residual Auction reports
-- capacity-market reports
-- planning-period parameters
+PJM material provides language related to:
 
----
+- capacity markets
+- reliability
+- market design
+- generation
+- demand growth
+- constrained supply
+- resource adequacy
+- grid operations
 
-# 4. Corpus Statistics
+## Academic Literature
 
-The final GridText v0.1 corpus contained:
+GridBERT v0.2 adds an `academic` source category.
 
-| Measure | Value |
-|---|---:|
-| Documents | 65 |
-| BERT tokens | 3,958,771 |
-| Training documents | 59 |
-| Validation documents | 6 |
-| Training sequences | 14,265 |
-| Validation sequences | 1,343 |
-| Maximum sequence length | 256 |
+Initial scholarly additions include:
 
-Documents were split at the **document level**, rather than randomly splitting individual text chunks.
+- Macey, Welton, and Wiseman (2024), *Grid Reliability in the Electric Era*
+- Wiseman (2022), *Regional Cooperative Federalism and the U.S. Electric Grid*
+- Wolak (2022), *Long-Term Resource Adequacy in Wholesale Electricity Markets with Significant Intermittent Renewables*
 
-This prevents sections from the same source document from appearing in both training and validation data.
+Academic papers are stored under:
 
-A fixed random seed was used:
-
-```python
-RANDOM_SEED = 42
+```text
+D:\GridBERT_v0_2\raw\academic
 ```
 
-Documents were sorted before shuffling to make the split reproducible.
+These papers add sustained scholarly language related to:
+
+- grid governance
+- reliability
+- resource adequacy
+- electricity markets
+- federal-state relationships
+- RTO/ISO institutions
 
 ---
 
-# 5. Text Extraction
+# 7. Corpus Management
 
-PDF files are recursively processed and converted into plain text.
+The v0.2 corpus should be tracked more systematically than v0.1.
+
+The corpus manifest should record, at minimum:
+
+- source organization
+- source category
+- document title
+- filename
+- year
+- author or issuing organization
+- document type
+- URL or DOI
+- pages
+- word count
+- BERT token count
+- local text-file location
+
+The v0.2 manifest is stored as:
+
+```text
+D:\GridBERT_v0_2\gridtext_manifest_v02.csv
+```
+
+The manifest should be treated as the authoritative record of the training corpus.
+
+---
+
+# 8. Text Extraction
 
 The extraction pipeline:
 
-1. Locates PDFs in the raw document directory.
+1. Recursively locates PDF files under the configured raw-data directory.
 2. Extracts text using PyMuPDF.
-3. Cleans extracted whitespace.
-4. Saves text files while preserving source-directory structure.
+3. Cleans whitespace.
+4. Saves extracted text while preserving source-directory structure.
 5. Counts tokens using the Base BERT tokenizer.
-6. Produces a corpus manifest.
+6. Produces the corpus manifest.
 
-Example structure:
+Example:
 
 ```text
 raw/
+├── academic/
 ├── doe/
 ├── ferc/
 ├── nerc/
-│   └── ltra/
 └── pjm/
 
 text/
+├── academic/
 ├── doe/
 ├── ferc/
 ├── nerc/
-│   └── ltra/
 └── pjm/
 ```
 
-The corpus manifest records information about the processed documents.
-
 ---
 
-# 6. Preparing the Training Dataset
+# 9. Training Dataset Preparation
 
-The extracted text is divided into sequences suitable for BERT training.
-
-GridBERT v0.1 uses:
+GridBERT v0.2 uses BERT training sequences with a maximum length of 256 tokens.
 
 ```text
 254 content tokens
@@ -235,14 +292,14 @@ GridBERT v0.1 uses:
 256 total tokens
 ```
 
-The dataset preparation script generates:
+The dataset preparation script produces:
 
 ```text
 training/train.jsonl
 training/validation.jsonl
 ```
 
-Each JSONL record contains:
+Each sequence records:
 
 ```json
 {
@@ -252,15 +309,19 @@ Each JSONL record contains:
 }
 ```
 
-Very short trailing fragments containing fewer than 32 tokens are excluded.
+Very small trailing fragments are excluded according to the configuration.
 
-The train-validation split occurs at the document level.
+Documents are split at the document level to prevent chunks from the same report from appearing in both training and validation sets.
 
 ---
 
-# 7. Validation Documents
+# 10. Validation Strategy
 
-The reproducible v0.1 validation set contains six documents:
+GridBERT v0.2 should preserve a clean held-out validation set.
+
+The original six v0.1 validation documents should remain excluded from v0.2 training if they are used for direct cross-version comparison.
+
+Those documents were:
 
 ```text
 99ras.txt
@@ -271,363 +332,198 @@ ltra2004.txt
 2013_ltra_final.txt
 ```
 
-These documents were not included in GridBERT MLM training.
+Maintaining these holdouts allows more meaningful comparison among:
+
+```text
+Base BERT
+GridBERT v0.1
+GridBERT v0.2
+```
 
 ---
 
-# 8. Training GridBERT
+# 11. Project Configuration
 
-GridBERT v0.1 was initialized from:
+GridBERT v0.2 uses a single root-level `config.yaml` file.
 
-```text
-google-bert/bert-base-uncased
+This keeps paths, model references, training parameters, and evaluation settings out of individual Python scripts.
+
+Example:
+
+```yaml
+project:
+  name: "GridBERT"
+  version: "v0.2"
+
+paths:
+  data_root: "D:/GridBERT_v0_2"
+
+  raw_dir: "raw"
+  text_dir: "text"
+  training_dir: "training"
+
+  train_file: "training/train.jsonl"
+  validation_file: "training/validation.jsonl"
+  corpus_manifest: "gridtext_manifest_v02.csv"
+
+  model_output_dir: "models/GridBERT-v0.2"
+  trained_model_dir: "models/GridBERT-v0.2/final"
+
+  experiment_dir: "experiments/GridBERT-v0.2"
+  benchmark_file: "experiments/GridBERT-v0.2/grid_domain_benchmark.jsonl"
+  benchmark_results_csv: "experiments/GridBERT-v0.2/grid_domain_benchmark_results.csv"
+  benchmark_summary_json: "experiments/GridBERT-v0.2/grid_domain_benchmark_summary.json"
+  fixed_validation_file: "experiments/GridBERT-v0.2/fixed_validation.jsonl"
+  fixed_mask_results_file: "experiments/GridBERT-v0.2/fixed_mask_results.json"
+
+models:
+  tokenizer_model: "google-bert/bert-base-uncased"
+  training_start_model: "google-bert/bert-base-uncased"
+  reference_model: "google-bert/bert-base-uncased"
+  trained_model_label: "GridBERT v0.2"
+
+dataset:
+  content_length: 254
+  min_final_fragment: 32
+  validation_fraction: 0.10
+  seed: 42
+
+training:
+  epochs: 3
+  learning_rate: 2.0e-5
+  mlm_probability: 0.15
+  weight_decay: 0.01
+  seed: 42
+
+evaluation:
+  fixed_mask_seed: 42
+  fixed_mask_probability: 0.15
+  fixed_mask_batch_size: 2
+  benchmark_top_k: 5
 ```
 
-Training used masked-language modeling.
+The helper script:
 
-Approximately 15% of eligible tokens were dynamically selected for the MLM task.
+```text
+scripts/config_loader.py
+```
 
-## Training Parameters
+loads this configuration and resolves paths relative to `paths.data_root`.
+
+---
+
+# 12. Training
+
+GridBERT v0.2 will use masked-language-model pretraining starting from Base BERT.
+
+Current default configuration:
 
 | Parameter | Value |
 |---|---:|
+| Starting model | `google-bert/bert-base-uncased` |
 | Epochs | 3 |
 | Learning rate | 2e-5 |
 | MLM probability | 0.15 |
 | Weight decay | 0.01 |
 | Random seed | 42 |
-| Sequence length | 256 |
-| Training sequences | 14,265 |
+| Maximum sequence length | 256 |
 
-Training was performed using Hugging Face Transformers and PyTorch.
+These values can be changed in `config.yaml` without editing the training script.
 
-The original experiment was trained on CPU and required approximately nine hours.
-
-The final model was saved locally as:
+The trained model will be written to:
 
 ```text
-models/GridBERT-v0.1/final/
+D:\GridBERT_v0_2\models\GridBERT-v0.2\final
 ```
 
 ---
 
-# 9. Validation Loss During Training
+# 13. Evaluation Plan
 
-Validation loss improved across all three epochs:
+GridBERT v0.2 should be evaluated using the same types of tests used for v0.1.
 
-| Model / Epoch | Validation Loss |
-|---|---:|
-| Base BERT | 2.6675 |
-| GridBERT Epoch 1 | 1.606 |
-| GridBERT Epoch 2 | 1.478 |
-| GridBERT Epoch 3 | 1.449 |
+## Fixed-Mask Evaluation
 
-The continued reduction in validation loss provided no immediate indication that the third epoch was degrading held-out performance.
+Both Base BERT and GridBERT v0.2 receive identical masked validation tokens.
 
----
+Metrics:
 
-# 10. Fixed-Mask Evaluation
+- MLM loss
+- perplexity
 
-Standard MLM evaluation can dynamically select different masked tokens during different runs.
+## Grid-Domain Benchmark
 
-To create a stricter comparison, a separate fixed-mask validation dataset was generated.
+The frozen 50-prompt diagnostic benchmark can be reused to compare versions.
 
-The same:
+Metrics:
 
-- input sequences
-- masked positions
-- original target tokens
+- Hits@1
+- Hits@5
+- Mean Reciprocal Rank
 
-were supplied to both Base BERT and GridBERT.
+The original benchmark covers:
 
-The fixed dataset contains all 1,343 validation sequences.
-
-## Results
-
-| Model | MLM Loss | Perplexity |
-|---|---:|---:|
-| Base BERT | 2.6431 | 14.06 |
-| **GridBERT v0.1** | **1.4324** | **4.19** |
-
-GridBERT therefore reduced held-out fixed-mask perplexity from:
-
-```text
-14.06 -> 4.19
-```
-
-This confirms that the improvement observed during training was not simply caused by differences in randomly selected masked tokens.
-
----
-
-# 11. Domain-Specific Probe Examples
-
-Before training, several manually constructed prompts were used to identify possible domain mismatch.
-
-## PJM Market
-
-Prompt:
-
-```text
-PJM operates a wholesale electricity [MASK].
-```
-
-Base BERT:
-
-```text
-business       0.2006
-network        0.1306
-system         0.1187
-company        0.0924
-market         0.0825
-```
-
-GridBERT:
-
-```text
-market         0.9237
-system         0.0377
-marketplace    0.0144
-```
-
-GridBERT developed a much stronger relationship between PJM and the wholesale electricity market.
-
-## Grid Reliability
-
-Prompt:
-
-```text
-A shortage of generation can threaten grid [MASK].
-```
-
-Base BERT:
-
-```text
-capacity       0.1157
-reliability    0.0717
-access         0.0549
-supply         0.0495
-```
-
-GridBERT:
-
-```text
-reliability    0.9094
-security       0.0493
-operations     0.0137
-stability      0.0053
-```
-
-## Dispatch
-
-Prompt:
-
-```text
-The grid operator dispatched additional [MASK].
-```
-
-Base BERT:
-
-```text
-workers
-vehicles
-troops
-firefighters
-volunteers
-```
-
-GridBERT:
-
-```text
-resources
-reinforcements
-customers
-power
-staff
-```
-
-The GridBERT predictions show a shift away from the ordinary-language interpretation of `dispatch` and toward grid-related concepts.
-
-## Generation Adequacy
-
-Prompt:
-
-```text
-The utility must maintain adequate generation [MASK].
-```
-
-Base BERT strongly predicted:
-
-```text
-capacity
-```
-
-GridBERT produced:
-
-```text
-reserves
-capacity
-resources
-capability
-supply
-```
-
-This suggests a broader relationship between generation and resource-adequacy terminology.
-
----
-
-# 12. Remaining Weaknesses
-
-Domain adaptation did not improve every term equally.
-
-For example:
-
-```text
-The transmission line experienced thermal [MASK].
-```
-
-GridBERT continued producing predictions such as:
-
-```text
-collapse
-issues
-failure
-problems
-```
-
-rather than strongly predicting concepts such as:
-
-```text
-limit
-constraint
-overload
-```
-
-This suggests that GridBERT v0.1 still has weak representations for some highly specialized transmission terminology.
-
----
-
-# 13. 50-Prompt Grid-Domain Benchmark
-
-A larger diagnostic benchmark was developed containing 50 masked-language prompts.
-
-The benchmark contains five prompts from each of ten categories:
-
-1. Markets
-2. Reliability
-3. Resource adequacy
-4. Transmission
-5. Congestion
-6. Dispatch
-7. Load
-8. Generation
-9. Reserves
-10. Institutions
-
-Each prompt specifies one expected domain term.
-
-Example:
-
-```json
-{
-  "category": "reliability",
-  "prompt": "A shortage of generation can threaten grid [MASK].",
-  "expected": "reliability"
-}
-```
-
----
-
-# 14. Benchmark Metrics
-
-Three ranking metrics are calculated.
-
-## Hits@1
-
-The proportion of prompts where the expected domain term is the model's highest-ranked prediction.
-
-## Hits@5
-
-The proportion of prompts where the expected term appears anywhere among the five highest-ranked predictions.
-
-## Mean Reciprocal Rank
-
-MRR measures how highly the expected term is ranked.
-
-Examples:
-
-```text
-Rank 1  -> 1.00
-Rank 2  -> 0.50
-Rank 5  -> 0.20
-Rank 10 -> 0.10
-```
-
----
-
-# 15. Domain Benchmark Results
-
-## Overall Results
-
-| Metric | Base BERT | GridBERT |
-|---|---:|---:|
-| Hits@1 | 0.280 | **0.720** |
-| Hits@5 | 0.600 | **0.900** |
-| MRR | 0.430 | **0.804** |
-
-The expected grid-domain term was Base BERT's first prediction 28% of the time.
-
-For GridBERT, it was the first prediction 72% of the time.
-
-The expected term appeared within GridBERT's top five predictions on 90% of benchmark prompts, compared with 60% for Base BERT.
-
----
-
-# 16. Results by Domain
-
-| Category | Base H@1 | GridBERT H@1 | Base H@5 | GridBERT H@5 |
-|---|---:|---:|---:|---:|
-| Markets | 0.40 | **0.60** | 0.80 | **1.00** |
-| Reliability | 0.40 | **1.00** | 0.80 | **1.00** |
-| Resource adequacy | 0.60 | 0.60 | 0.60 | **1.00** |
-| Transmission | 0.20 | **0.60** | 0.40 | **0.80** |
-| Congestion | 0.00 | **0.60** | 0.60 | 0.60 |
-| Dispatch | 0.20 | **0.80** | 0.60 | **1.00** |
-| Load | 0.40 | 0.40 | 0.80 | 0.80 |
-| Generation | 0.40 | **0.80** | 0.60 | **0.80** |
-| Reserves | 0.20 | **0.80** | 0.40 | **1.00** |
-| Institutions | 0.00 | **1.00** | 0.40 | **1.00** |
-
-The largest gains appeared in:
-
+- markets
 - reliability
-- institutional terminology
-- dispatch
-- reserves
-- generation
+- resource adequacy
 - transmission
 - congestion
+- dispatch
+- load
+- generation
+- reserves
+- institutions
 
-`load` remained one of the weakest categories.
-
----
-
-# 17. Main Result
-
-The primary GridBERT v0.1 result is:
-
-> **Domain-adaptive pretraining increased Hits@1 on a 50-prompt electric-grid language benchmark from 28% for Base BERT to 72% for GridBERT.**
-
-This result is supported independently by the fixed-mask MLM evaluation:
-
-> **GridBERT reduced held-out masked-language perplexity from 14.06 to 4.19.**
-
-Together, these results provide evidence that continued domain-specific pretraining substantially changed BERT's representation of specialized electric-grid language.
+The v0.1 benchmark should remain unchanged so that v0.2 results can be compared directly.
 
 ---
 
-# 18. Repository Structure
+# 14. Downstream Proof of Concept
 
-A suggested repository structure is:
+A major next step for GridBERT is demonstrating usefulness beyond masked-language prediction.
+
+The initial proposed downstream application is a:
+
+> **Grid Reliability Sentence Classifier**
+
+The classifier would determine whether a sentence describes a grid reliability concern.
+
+Example positive sentence:
+
+```text
+Retirements and load growth could create capacity shortfalls.
+```
+
+Example negative sentence:
+
+```text
+PJM operates a competitive wholesale electricity market.
+```
+
+The experiment would compare:
+
+```text
+Base BERT classifier
+vs.
+GridBERT classifier
+```
+
+using the same labeled training and test data.
+
+Possible evaluation metrics include:
+
+- accuracy
+- precision
+- recall
+- F1 score
+
+This provides a practical test of whether domain-adaptive pretraining improves performance on an applied grid-policy NLP task.
+
+---
+
+# 15. Repository Structure
+
+Recommended GitHub project structure:
 
 ```text
 GridBERT/
@@ -635,138 +531,86 @@ GridBERT/
 ├── README.md
 ├── requirements.txt
 ├── .gitignore
+├── config.yaml
 │
 ├── scripts/
+│   ├── config_loader.py
 │   ├── extract_gridtext.py
 │   ├── prepare_gridtext.py
 │   ├── train_gridbert.py
 │   ├── compare_gridbert.py
-│   ├── freeze_gridbert_v01.py
 │   ├── fixed_mask_eval.py
 │   ├── create_grid_benchmark.py
 │   └── evaluate_grid_benchmark.py
 │
 ├── benchmarks/
-│   └── grid_domain_benchmark.jsonl
-│
 ├── results/
-│   ├── fixed_mask_results.json
-│   ├── grid_domain_benchmark_results.csv
-│   └── grid_domain_benchmark_summary.json
-│
+├── experiments/
 └── docs/
-    └── experiment_notes/
 ```
 
-Large source documents, extracted text, training datasets, checkpoints, and model weights should generally not be committed directly to GitHub.
+Large corpus files and model weights should remain outside the normal Git repository.
 
 ---
 
-# 19. Scripts
+# 16. Scripts
+
+## `config_loader.py`
+
+Loads `config.yaml` and resolves configured data paths.
 
 ## `extract_gridtext.py`
 
-Processes the raw PDF corpus.
-
-Responsibilities:
-
-- recursively locate PDFs
-- extract text using PyMuPDF
-- clean whitespace
-- save extracted text
-- calculate BERT token counts
-- generate corpus manifest
+- locates PDFs
+- extracts text with PyMuPDF
+- cleans text
+- saves extracted text
+- counts BERT tokens
+- builds the corpus manifest
 
 ## `prepare_gridtext.py`
 
-Creates the MLM training dataset.
-
-Responsibilities:
-
-- locate extracted text files
-- sort documents for reproducibility
-- shuffle using seed 42
-- perform document-level train-validation split
-- tokenize documents
-- create 256-token sequences
-- generate JSONL datasets
-
-Outputs:
-
-```text
-train.jsonl
-validation.jsonl
-```
+- loads extracted text
+- performs document-level train-validation splitting
+- tokenizes documents
+- creates 256-token sequences
+- writes training and validation JSONL files
 
 ## `train_gridbert.py`
 
-Performs continued masked-language-model pretraining.
-
-Responsibilities:
-
-- load Base BERT
-- load GridText datasets
-- dynamically mask training tokens
-- evaluate Base BERT
-- train for three epochs
-- evaluate GridBERT
-- save the final model
+- loads Base BERT
+- loads GridText training data
+- performs dynamic MLM masking
+- trains GridBERT
+- evaluates validation performance
+- saves the trained model
 
 ## `compare_gridbert.py`
 
-Runs the original manually constructed masked-word probes against both Base BERT and GridBERT.
-
-This script is primarily intended for qualitative comparison and demonstration.
-
-## `freeze_gridbert_v01.py`
-
-Creates a reproducibility manifest for the GridBERT v0.1 experiment.
-
-The manifest records information including:
-
-- model
-- corpus size
-- train-validation split
-- training parameters
-- file hashes
-- experimental results
+Runs qualitative masked-word comparisons between Base BERT and GridBERT.
 
 ## `fixed_mask_eval.py`
 
-Creates a permanent fixed-mask validation dataset and evaluates both models against exactly the same masked tokens.
-
-Outputs include:
-
-```text
-fixed_validation.jsonl
-fixed_mask_results.json
-```
+Evaluates Base BERT and GridBERT on identical masked validation tokens.
 
 ## `create_grid_benchmark.py`
 
-Creates the 50-prompt GridBERT domain benchmark.
-
-The benchmark contains 50 prompts, 10 categories, and 5 prompts per category.
+Creates the frozen 50-prompt grid-domain benchmark.
 
 ## `evaluate_grid_benchmark.py`
 
-Evaluates Base BERT and GridBERT against the grid-domain benchmark.
+Calculates:
 
-Metrics include:
-
-```text
-Hits@1
-Hits@5
-Mean Reciprocal Rank
-```
-
-The script also creates prompt-level CSV results and category-level summary results.
+- Hits@1
+- Hits@5
+- Mean Reciprocal Rank
+- category-level results
 
 ---
 
-# 20. Installation
+# 17. Installation
 
-The original experiment was developed using Python 3.12.
+The project was developed using Python 3.12.
 
 Create a virtual environment:
 
@@ -774,197 +618,146 @@ Create a virtual environment:
 python -m venv .venv
 ```
 
-Activate it on Windows:
+Activate it:
 
 ```powershell
 .\.venv\Scripts\Activate.ps1
 ```
 
-Install the principal dependencies:
+Install dependencies:
 
 ```powershell
-python -m pip install transformers torch pymupdf
+python -m pip install transformers torch accelerate pymupdf pyyaml
 ```
 
-The original development environment used Hugging Face Transformers 5.16.1.
-
-For exact reproducibility, use the versions recorded in `requirements.txt`.
+For exact package versions, use the project `requirements.txt`.
 
 ---
 
-# 21. Running the Experiment
+# 18. Running the Pipeline
 
-The basic workflow is:
+Before running any script, verify the paths and settings in:
 
-## Step 1: Extract corpus text
+```text
+config.yaml
+```
+
+## Extract corpus text
 
 ```powershell
 python .\scripts\extract_gridtext.py
 ```
 
-## Step 2: Prepare training data
+## Prepare training sequences
 
 ```powershell
 python .\scripts\prepare_gridtext.py
 ```
 
-## Step 3: Train GridBERT
+## Train GridBERT v0.2
 
 ```powershell
 python .\scripts\train_gridbert.py
 ```
 
-## Step 4: Compare diagnostic prompts
+## Run qualitative comparison
 
 ```powershell
 python .\scripts\compare_gridbert.py
 ```
 
-## Step 5: Freeze the experiment
-
-```powershell
-python .\scripts\freeze_gridbert_v01.py
-```
-
-## Step 6: Run fixed-mask evaluation
-
-```powershell
-python .\scripts\fixed_mask_eval.py
-```
-
-## Step 7: Create domain benchmark
+## Create domain benchmark
 
 ```powershell
 python .\scripts\create_grid_benchmark.py
 ```
 
-## Step 8: Evaluate domain benchmark
+## Evaluate domain benchmark
 
 ```powershell
 python .\scripts\evaluate_grid_benchmark.py
 ```
 
+## Run fixed-mask evaluation
+
+```powershell
+python .\scripts\fixed_mask_eval.py
+```
+
 ---
 
-# 22. Reproducibility
+# 19. Reproducibility
 
-Several measures were added to improve reproducibility.
+GridBERT v0.2 uses several reproducibility controls.
 
-## Fixed random seed
+## Configuration File
+
+All important paths and experiment parameters are stored in `config.yaml`.
+
+## Fixed Random Seed
 
 ```python
 seed = 42
 ```
 
-## Deterministic document ordering
+## Deterministic Document Ordering
 
-Documents are sorted before the train-validation shuffle.
+Documents are sorted before any random split.
 
-## Document-level splitting
+## Document-Level Splitting
 
-Individual reports cannot contribute chunks to both training and validation sets.
+Chunks from the same report cannot appear in both training and validation data.
 
-## Fixed-mask validation
+## Frozen v0.1 Benchmark
 
-A permanent masked validation dataset allows future GridBERT versions to be tested against exactly the same prediction task.
+The original 50-prompt benchmark remains unchanged for cross-version comparison.
 
-## File hashes
+## Held-Out Documents
 
-The experiment manifest records SHA-256 hashes for important dataset files.
-
-## Frozen benchmark
-
-The GridBERT v0.1 50-prompt benchmark should not be modified after results are reported.
-
-Future benchmark revisions should receive new version identifiers.
+The original v0.1 validation reports should remain excluded from v0.2 training when used for direct comparison.
 
 ---
 
-# 23. Limitations
+# 20. Limitations
 
-GridBERT v0.1 is a proof-of-concept experiment.
+GridBERT v0.2 is still under development.
 
-Important limitations include:
+Current limitations include:
 
-### Corpus size
+- the expanded corpus is not yet finalized
+- v0.2 has not yet been trained
+- v0.2 evaluation results are not yet available
+- institutional coverage remains incomplete
+- academic-source coverage is still small
+- the 50-prompt benchmark uses one expected answer per prompt
+- the benchmark has not yet undergone independent expert validation
 
-The approximately 4-million-token corpus is small compared with the original BERT pretraining corpus.
-
-### Institutional coverage
-
-The current corpus emphasizes DOE, FERC, NERC, and PJM.
-
-Future versions should include additional RTO/ISOs, utilities, state public utility commissions, and other grid institutions.
-
-### Benchmark construction
-
-The current 50-prompt benchmark was manually constructed and uses one expected term per prompt.
-
-Natural language often permits multiple technically correct completions.
-
-For example:
-
-```text
-capacity
-resources
-reserves
-supply
-```
-
-could all be reasonable under certain contexts.
-
-The benchmark should therefore be interpreted as a diagnostic benchmark rather than a definitive measure of domain knowledge.
-
-### Expert validation
-
-The benchmark has not yet undergone independent expert review.
-
-### Terminology coverage
-
-GridBERT remains weaker in several areas, including:
-
-- load
-- thermal limits
-- some congestion terminology
-- transmission constraints
-
-### Model architecture
-
-GridBERT v0.1 uses the original BERTBASE architecture.
-
-Future work may compare domain adaptation using newer encoder architectures.
+No performance claims should be made for GridBERT v0.2 until training and evaluation are complete.
 
 ---
 
-# 24. Future Work
+# 21. Planned Improvements
 
-Potential GridBERT v0.2 improvements include:
+Current priorities include:
 
-- expand the GridText corpus
-- improve institutional diversity
-- add more transmission-planning documents
-- increase coverage of grid operations
-- specifically target weak terminology
-- construct expert-reviewed benchmarks
-- permit multiple acceptable benchmark answers
-- develop downstream classification tasks
-- perform named entity recognition
-- identify generation-retirement events
-- classify reliability concerns
-- detect emergency regulatory actions
-- detect transmission constraints
-- classify institutional framing
-- compare policy language among DOE, FERC, NERC, RTO/ISOs, utilities, and state regulators
-
-Longer-term research could investigate whether GridBERT can convert large collections of regulatory and technical documents into structured data suitable for computational social science and policy analysis.
+- expand the corpus with carefully selected scholarly and institutional sources
+- improve transmission-language coverage
+- improve congestion-language coverage
+- improve load and load-forecasting coverage
+- improve dispatch and reserve terminology
+- improve resource-adequacy coverage
+- improve corpus metadata and provenance tracking
+- create a downstream reliability classifier
+- develop more rigorous expert-reviewed benchmarks
+- compare Base BERT, GridBERT v0.1, and GridBERT v0.2
 
 ---
 
-# 25. Research Direction
+# 22. Long-Term Research Direction
 
-GridBERT is intended primarily as a domain-specific text measurement and information-extraction model rather than as a general conversational language model.
+GridBERT is intended as a domain-specific measurement and information-extraction model for electric-grid policy and operations.
 
-Potential applications include automatically identifying:
+Potential applications include identifying:
 
 - generator retirements
 - reliability concerns
@@ -974,41 +767,27 @@ Potential applications include automatically identifying:
 - emergency actions
 - market interventions
 - regulatory disputes
+- institutional responsibilities
 - federal-state jurisdictional issues
-- institutional framing of reliability problems
+- reliability framing
 
-One longer-term application is a **Grid Reliability Policy Monitor** that uses GridBERT to identify emerging reliability and governance issues across thousands of regulatory and technical documents.
+A longer-term application is a:
 
----
+> **Grid Reliability Policy Monitor**
 
-# 26. Model Portability
-
-Once trained, GridBERT can be copied to another computer without retraining.
-
-A saved model can be loaded locally using:
-
-```python
-from transformers import AutoTokenizer, AutoModelForMaskedLM
-
-model_path = r"path\to\GridBERT-v0.1\final"
-
-tokenizer = AutoTokenizer.from_pretrained(model_path)
-model = AutoModelForMaskedLM.from_pretrained(model_path)
-```
-
-Python, PyTorch, and Transformers are required on the destination computer.
-
-Internet access is not required when loading a complete locally saved model.
+Such a system could automatically scan technical and regulatory documents and convert unstructured grid-policy language into structured data for computational social science and policy analysis.
 
 ---
 
-# 27. Repository Data Policy
+# 23. Repository Data Policy
 
 The GitHub repository should contain:
 
 - source code
+- `config.yaml`
 - benchmark definitions
 - experiment metadata
+- corpus manifest
 - small result files
 - documentation
 
@@ -1022,44 +801,42 @@ The repository should generally exclude:
 - Hugging Face cache files
 - Python virtual environments
 
-These files are either large, reproducible from source documents, or inappropriate for normal Git version control.
-
-Model weights can later be distributed through a model repository such as Hugging Face if desired.
+Model weights may later be distributed through a dedicated model repository if desired.
 
 ---
 
-# 28. Status
+# 24. Status
 
-**GridBERT v0.1: Complete**
+**GridBERT v0.2: In Development**
 
-Current experimental results:
+Current status:
 
 ```text
+Base model:
+google-bert/bert-base-uncased
+
+Data repository:
+D:\GridBERT_v0_2
+
 Corpus:
-65 documents
-3,958,771 BERT tokens
+Expansion in progress
+
+New source category:
+Academic literature
+
+Initial scholarly additions:
+Macey, Welton & Wiseman (2024)
+Wiseman (2022)
+Wolak (2022)
+
+Configuration:
+Single root-level config.yaml
 
 Training:
-59 documents
-14,265 sequences
+Not yet started
 
-Validation:
-6 documents
-1,343 sequences
-
-Fixed-mask evaluation:
-Base BERT perplexity: 14.06
-GridBERT perplexity:   4.19
-
-50-prompt benchmark:
-Base BERT Hits@1: 28%
-GridBERT Hits@1:  72%
-
-Base BERT Hits@5: 60%
-GridBERT Hits@5:  90%
-
-Base BERT MRR: 0.430
-GridBERT MRR:  0.804
+Evaluation:
+Pending
 ```
 
-GridBERT v0.1 therefore provides an initial reproducible proof of concept that continued domain-adaptive pretraining can substantially improve BERT's representation of specialized U.S. electric-grid language.
+GridBERT v0.2 is designed to provide a cleaner, larger, and more systematically managed follow-up to the successful GridBERT v0.1 proof-of-concept.

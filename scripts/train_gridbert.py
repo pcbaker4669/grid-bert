@@ -1,7 +1,7 @@
 import json
 import math
 from pathlib import Path
-
+from config_loader import load_config, data_path
 import torch
 from torch.utils.data import Dataset
 
@@ -18,16 +18,23 @@ from transformers import (
 # Configuration
 # ---------------------------------------------------------
 
-MODEL_NAME = "google-bert/bert-base-uncased"
+config = load_config()
 
-TRAIN_FILE = Path(r"D:\GridBERT\training\train.jsonl")
-VALID_FILE = Path(r"D:\GridBERT\training\validation.jsonl")
+MODEL_NAME = config["models"]["training_start_model"]
+TOKENIZER_MODEL = config["models"]["tokenizer_model"]
 
-OUTPUT_DIR = Path(r"D:\GridBERT\models\GridBERT-v0.1")
+TRAIN_FILE = data_path(config, "train_file")
+VALID_FILE = data_path(config, "validation_file")
 
-NUM_EPOCHS = 3
-LEARNING_RATE = 2e-5
-MLM_PROBABILITY = 0.15
+OUTPUT_DIR = data_path(config, "model_output_dir")
+
+NUM_EPOCHS = config["training"]["epochs"]
+LEARNING_RATE = config["training"]["learning_rate"]
+MLM_PROBABILITY = config["training"]["mlm_probability"]
+WEIGHT_DECAY = config["training"]["weight_decay"]
+RANDOM_SEED = config["training"]["seed"]
+
+MODEL_LABEL = config["models"]["trained_model_label"]
 
 OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
 
@@ -77,9 +84,8 @@ validation_dataset = GridTextDataset(VALID_FILE)
 # ---------------------------------------------------------
 
 tokenizer = AutoTokenizer.from_pretrained(
-    MODEL_NAME
+    TOKENIZER_MODEL
 )
-
 
 # ---------------------------------------------------------
 # Load Base BERT
@@ -102,7 +108,7 @@ data_collator = DataCollatorForLanguageModeling(
     tokenizer=tokenizer,
     mlm=True,
     mlm_probability=MLM_PROBABILITY,
-    seed=42
+    seed=RANDOM_SEED
 )
 
 
@@ -144,8 +150,7 @@ training_args = TrainingArguments(
 
     learning_rate=LEARNING_RATE,
 
-    weight_decay=0.01,
-
+    weight_decay=WEIGHT_DECAY,
     eval_strategy="epoch",
     save_strategy="epoch",
 
@@ -155,7 +160,7 @@ training_args = TrainingArguments(
 
     fp16=has_cuda,
 
-    seed=42,
+    seed=RANDOM_SEED,
 
     report_to="none"
 )
@@ -200,8 +205,7 @@ print(f"Base BERT perplexity:      {base_perplexity:.2f}")
 # Train GridBERT
 # ---------------------------------------------------------
 
-print("\nStarting GridBERT v0.1 training...\n")
-
+print(f"\nStarting {MODEL_LABEL} training...\n")
 trainer.train()
 
 
