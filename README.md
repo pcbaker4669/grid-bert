@@ -1,6 +1,6 @@
-# GridBERT v0.2
+# GridBERT v0.3
 
-GridBERT v0.2 is the next development version of GridBERT, a domain-adapted BERT model designed to better represent the specialized language of the U.S. electric-power grid.
+GridBERT v0.3 is the next development version of GridBERT, a domain-adapted BERT model designed to better represent the specialized language of the U.S. electric-power grid.
 
 The project focuses on technical, regulatory, market, and policy language related to:
 
@@ -16,7 +16,7 @@ The project focuses on technical, regulatory, market, and policy language relate
 - emergency grid actions
 - grid governance and regulation
 
-GridBERT v0.2 is being developed as an expanded and more systematic successor to GridBERT v0.1.
+GridBERT v0.3 is being developed as an expanded and more systematic successor to GridBERT v0.2.
 
 ---
 
@@ -26,7 +26,7 @@ The main research question remains:
 
 > **Can domain-adaptive pretraining improve BERT's representation of specialized U.S. electric-grid language?**
 
-GridBERT v0.2 extends this question by asking whether a larger and more diverse grid-domain corpus can improve areas where GridBERT v0.1 remained comparatively weak.
+GridBERT v0.3 extends this question by asking whether a larger and more diverse grid-domain corpus can improve areas where GridBERT v0.1 remained comparatively weak.
 
 Current target areas include:
 
