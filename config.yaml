@@ -57,3 +57,15 @@ evaluation:
   fixed_mask_probability: 0.15
   fixed_mask_batch_size: 2
   benchmark_top_k: 5
+
+
+classification:
+  root: "classification"
+  labeled_file: "classification/data/reliability_labeled.csv"
+  train_file: "classification/data/train.csv"
+  validation_file: "classification/data/validation.csv"
+  test_file: "classification/data/test.csv"
+
+  basebert_output: "classification/models/basebert"
+  gridbert_output: "classification/models/gridbert-v0.3"
+  results_dir: "classification/results"
