@@ -46,9 +46,7 @@ OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
 class GridTextDataset(Dataset):
 
     def __init__(self, filename):
-
         self.examples = []
-
         print(f"Loading {filename}...")
 
         with open(
@@ -56,11 +54,8 @@ class GridTextDataset(Dataset):
             "r",
             encoding="utf-8"
         ) as file:
-
             for line in file:
-
                 record = json.loads(line)
-
                 self.examples.append({
                     "input_ids": record["input_ids"],
                     "attention_mask": record["attention_mask"]
@@ -100,7 +95,6 @@ model = AutoModelForMaskedLM.from_pretrained(
 
 # ---------------------------------------------------------
 # MLM Data Collator
-#
 # Randomly masks 15% of tokens during each batch.
 # ---------------------------------------------------------
 
@@ -119,15 +113,12 @@ data_collator = DataCollatorForLanguageModeling(
 has_cuda = torch.cuda.is_available()
 
 if has_cuda:
-
     print("\nGPU detected:")
     print(torch.cuda.get_device_name(0))
 
     train_batch_size = 8
     eval_batch_size = 8
-
 else:
-
     print("\nWARNING: No CUDA GPU detected.")
     print("Training will run on the CPU and may be slow.")
 
@@ -140,28 +131,18 @@ else:
 # ---------------------------------------------------------
 
 training_args = TrainingArguments(
-
     output_dir=str(OUTPUT_DIR),
-
     num_train_epochs=NUM_EPOCHS,
-
     per_device_train_batch_size=train_batch_size,
     per_device_eval_batch_size=eval_batch_size,
-
     learning_rate=LEARNING_RATE,
-
     weight_decay=WEIGHT_DECAY,
     eval_strategy="epoch",
     save_strategy="epoch",
-
     logging_steps=100,
-
     save_total_limit=3,
-
     fp16=has_cuda,
-
     seed=RANDOM_SEED,
-
     report_to="none"
 )
 
@@ -171,17 +152,11 @@ training_args = TrainingArguments(
 # ---------------------------------------------------------
 
 trainer = Trainer(
-
     model=model,
-
     args=training_args,
-
     train_dataset=train_dataset,
-
     eval_dataset=validation_dataset,
-
     data_collator=data_collator,
-
     processing_class=tokenizer
 )
 
@@ -216,7 +191,6 @@ trainer.train()
 print("\nEvaluating GridBERT...")
 
 grid_results = trainer.evaluate()
-
 grid_loss = grid_results["eval_loss"]
 grid_perplexity = math.exp(grid_loss)
 
@@ -227,7 +201,6 @@ print("=" * 60)
 
 print(f"Base BERT loss:        {base_loss:.4f}")
 print(f"GridBERT loss:         {grid_loss:.4f}")
-
 print(f"Base BERT perplexity:  {base_perplexity:.2f}")
 print(f"GridBERT perplexity:   {grid_perplexity:.2f}")
 
@@ -237,7 +210,6 @@ print(f"GridBERT perplexity:   {grid_perplexity:.2f}")
 # ---------------------------------------------------------
 
 FINAL_DIR = OUTPUT_DIR / "final"
-
 trainer.save_model(str(FINAL_DIR))
 
 tokenizer.save_pretrained(
