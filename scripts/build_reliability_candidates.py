@@ -12,7 +12,6 @@ from config_loader import load_config, data_path
 config = load_config()
 
 TEXT_ROOT = data_path(config, "text_dir")
-
 DATA_ROOT = Path(config["paths"]["data_root"])
 
 OUTPUT_FILE = (
@@ -58,19 +57,9 @@ def split_sentences(text):
     Simple sentence splitter suitable for the already-cleaned
     GridText files. No additional NLP package is required.
     """
-
     text = normalize_whitespace(text)
-
-    sentences = re.split(
-        r"(?<=[.!?])\s+(?=[A-Z0-9])",
-        text
-    )
-
-    return [
-        sentence.strip()
-        for sentence in sentences
-        if sentence.strip()
-    ]
+    sentences = re.split(r"(?<=[.!?])\s+(?=[A-Z0-9])", text)
+    return [sentence.strip() for sentence in sentences if sentence.strip()]
 
 def make_passages(sentences):
     """
@@ -83,7 +72,6 @@ def make_passages(sentences):
     passages = []
 
     for i, sentence in enumerate(sentences):
-
         # Single sentence
         if 80 <= len(sentence) <= 700:
             passages.append(sentence)
@@ -91,7 +79,6 @@ def make_passages(sentences):
         # Two-sentence passage
         if i + 1 < len(sentences):
             passage = sentence + " " + sentences[i + 1]
-
             if 120 <= len(passage) <= 1000:
                 passages.append(passage)
 
@@ -99,11 +86,7 @@ def make_passages(sentences):
 
 def contains_term(text, terms):
     lower_text = text.lower()
-
-    return any(
-        term in lower_text
-        for term in terms
-    )
+    return any(term in lower_text for term in terms)
 
 # ---------------------------------------------------------
 # Read GridText corpus
@@ -113,7 +96,6 @@ rng = random.Random(RANDOM_SEED)
 
 reliability_candidates = []
 general_candidates = []
-
 seen_text = set()
 
 
@@ -126,10 +108,7 @@ for text_file in TEXT_ROOT.rglob("*.txt"):
         source = "unknown"
 
     try:
-        text = text_file.read_text(
-            encoding="utf-8",
-            errors="ignore"
-        )
+        text = text_file.read_text(encoding="utf-8", errors="ignore")
     except Exception as exc:
         print(f"Unable to read {text_file}: {exc}")
         continue
@@ -138,9 +117,7 @@ for text_file in TEXT_ROOT.rglob("*.txt"):
     passages = make_passages(sentences)
 
     for passage in passages:
-        normalized = normalize_whitespace(
-            passage
-        )
+        normalized = normalize_whitespace(passage)
 
         # Remove duplicate passages
         duplicate_key = normalized.lower()
@@ -150,22 +127,12 @@ for text_file in TEXT_ROOT.rglob("*.txt"):
 
         seen_text.add(duplicate_key)
 
-        record = {
-            "source": source,
-            "source_document": str(relative_path),
-            "text": normalized,
-        }
+        record = {"source": source, "source_document": str(relative_path),"text": normalized}
 
-        if contains_term(
-            normalized,
-            RELIABILITY_TERMS
-        ):
+        if contains_term(normalized, RELIABILITY_TERMS):
             reliability_candidates.append(record)
 
-        elif contains_term(
-            normalized,
-            GRID_TERMS
-        ):
+        elif contains_term(normalized, GRID_TERMS):
             general_candidates.append(record)
 
   # ---------------------------------------------------------
@@ -175,66 +142,31 @@ for text_file in TEXT_ROOT.rglob("*.txt"):
 rng.shuffle(reliability_candidates)
 rng.shuffle(general_candidates)
 
-selected_reliability = reliability_candidates[
-    :TARGET_RELIABILITY_SIGNAL
-]
-
-selected_general = general_candidates[
-    :TARGET_GENERAL_GRID
-]
-
-selected = (
-    selected_reliability
-    + selected_general
-)
+selected_reliability = reliability_candidates[:TARGET_RELIABILITY_SIGNAL]
+selected_general = general_candidates[:TARGET_GENERAL_GRID]
+selected = (selected_reliability + selected_general)
 
 rng.shuffle(selected)     
-
 
 
 # ---------------------------------------------------------
 # Write annotation CSV
 # ---------------------------------------------------------
 
-OUTPUT_FILE.parent.mkdir(
-    parents=True,
-    exist_ok=True
-)
+OUTPUT_FILE.parent.mkdir(parents=True, exist_ok=True)
 
-fieldnames = [
-    "id",
-    "source",
-    "source_document",
-    "text",
-    "label",
-    "notes",
-]
+fieldnames = ["id", "source", "source_document", "text", "label", "notes"]
 
-
-with open(
-    OUTPUT_FILE,
-    "w",
-    newline="",
-    encoding="utf-8-sig",
-) as file:
-
-    writer = csv.DictWriter(
-        file,
-        fieldnames=fieldnames
-    )
+with open(OUTPUT_FILE, "w", newline="", encoding="utf-8-sig") as file:
+    writer = csv.DictWriter(file, fieldnames=fieldnames)
 
     writer.writeheader()
 
-    for index, record in enumerate(
-        selected,
-        start=1
-    ):
-
+    for index, record in enumerate(selected, start=1):
         writer.writerow({
             "id": index,
             "source": record["source"],
-            "source_document":
-                record["source_document"],
+            "source_document": record["source_document"],
             "text": record["text"],
             "label": "",
             "notes": "",
