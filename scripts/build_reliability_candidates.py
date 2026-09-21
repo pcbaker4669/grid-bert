@@ -1,3 +1,52 @@
+"""
+build_reliability_candidates.py
+
+Purpose
+-------
+Builds a candidate dataset for manually labeling electric-grid passages
+for the GridBERT reliability classification experiment.
+
+The script:
+
+1. Reads cleaned GridText .txt files.
+2. Splits documents into sentences and short two-sentence passages.
+3. Removes duplicate passages.
+4. Separates passages into two candidate pools:
+      - reliability-signal passages containing RELIABILITY_TERMS
+      - general-grid passages containing GRID_TERMS
+5. Randomly samples from both pools.
+6. Shuffles the selected passages.
+7. Writes the results to reliability_candidates.csv for manual annotation.
+
+The output CSV contains: id, source, source_document, text, label, notes
+
+The candidate-selection terms are only used to construct a useful
+annotation sample. They do NOT determine the final classification label.
+Each passage must still be manually labeled as:
+
+    0 = NOT_RELIABILITY
+    1 = RELIABILITY
+    2 = UNCERTAIN
+
+Sampling Balance
+----------------
+TARGET_RELIABILITY_SIGNAL and TARGET_GENERAL_GRID control the approximate
+composition of the candidate dataset.
+ 
+For example:
+
+    TARGET_RELIABILITY_SIGNAL = 300
+    TARGET_GENERAL_GRID = 200
+
+produces a 500-passage dataset containing approximately:
+
+    60% reliability-signal candidates
+    40% general-grid candidates
+
+Because these groups are selected using keywords, this does not guarantee
+that 60% of the final manually assigned labels will be RELIABILITY.
+"""
+
 import csv
 import random
 import re
