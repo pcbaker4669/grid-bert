@@ -61,7 +61,7 @@ evaluation:
 
 classification:
   root: "classification"
-  labeled_file: "classification/data/reliability_labeled.csv"
+  labeled_file: "classification/data/reliability_binary_training.csv"
   train_file: "classification/data/train.csv"
   validation_file: "classification/data/validation.csv"
   test_file: "classification/data/test.csv"

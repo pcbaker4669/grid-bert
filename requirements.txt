@@ -8,3 +8,5 @@ pymupdf
 requests
 beautifulsoup4
 PyYAML
+pandas
+scikit-learn
