@@ -69,3 +69,13 @@ classification:
   basebert_output: "classification/models/basebert"
   gridbert_output: "classification/models/gridbert-v0.3"
   results_dir: "classification/results"
+
+  external_test_root: "classification/external_test"
+  external_raw_dir: "classification/external_test/raw"
+  external_text_dir: "classification/external_test/text"
+  external_candidates_file: "classification/external_test/candidates/external_unseen_candidates.csv"
+  external_labeled_file: "classification/external_test/labeled/external_unseen_labeled.csv"
+  external_binary_file: "classification/external_test/labeled/external_unseen_binary.csv"
+  external_manifest_file: "classification/external_test/provenance/external_unseen_manifest.csv"
+  external_overlap_file: "classification/external_test/provenance/overlap_check.csv"
+  external_results_dir: "classification/external_test/results"
