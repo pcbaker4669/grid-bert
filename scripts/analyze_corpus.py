@@ -1,9 +1,6 @@
 import csv
-
 from collections import defaultdict
-
 from config_loader import load_config, data_path
-
 
 config = load_config()
 
