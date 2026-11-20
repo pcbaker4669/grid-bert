@@ -1,0 +1,6 @@
+﻿source,filename,document_date,document_type,pages,characters,words,bert_tokens,text_file,in_v03_manifest,used_in_mlm_training,used_in_mlm_validation
+caiso,demand-response-issues-and-performance-2025-sep-21-2026.pdf,2026-09-21,Demand Response Performance Report,33,69426,10547,14356,D:\GridBERT_v0_3\classification\external_test\text\caiso\demand-response-issues-and-performance-2025-sep-21-2026.txt,0,0,0
+nerc,nerc_sra_2026.pdf,2026-05,Summer Reliability Assessment,60,164605,23811,40149,D:\GridBERT_v0_3\classification\external_test\text\nerc\nerc_sra_2026.txt,0,0,0
+pjm,2025-rtep-baseline-assessment.pdf,2026-03-18,Baseline Reliability Assessment,123,310015,47637,89596,D:\GridBERT_v0_3\classification\external_test\text\pjm\2025-rtep-baseline-assessment.txt,0,0,0
+pjm,20260605-item-04---load-adjustment-accuracy-report.pdf,2026-06-05,Data Center Accuracy Report,9,2423,411,585,D:\GridBERT_v0_3\classification\external_test\text\pjm\20260605-item-04---load-adjustment-accuracy-report.txt,0,0,0
+pjm,item-03b---1-system-operations-report---presentation.pdf,2026-09-28,System Operations Report,21,6602,1005,1709,D:\GridBERT_v0_3\classification\external_test\text\pjm\item-03b---1-system-operations-report---presentation.txt,0,0,0

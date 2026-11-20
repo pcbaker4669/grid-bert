@@ -1,0 +1,51 @@
+{
+  "model": "GridBERT v0.3",
+  "dataset": "internal",
+  "model_path": "D:\\GridBERT_v0_3\\classification\\models\\gridbert-v0.3",
+  "test_file": "D:\\GridBERT_v0_3\\classification\\data\\test.csv",
+  "test_passages": 56,
+  "test_label_counts": {
+    "1": 33,
+    "0": 23
+  },
+  "max_length": 256,
+  "batch_size": 8,
+  "loss": 0.4077745420592172,
+  "accuracy": 0.8035714285714286,
+  "precision": 0.84375,
+  "recall": 0.8181818181818182,
+  "f1": 0.8307692307692308,
+  "confusion_matrix": {
+    "true_negative": 18,
+    "false_positive": 5,
+    "false_negative": 6,
+    "true_positive": 27
+  },
+  "classification_report": {
+    "NOT_RELIABILITY": {
+      "precision": 0.75,
+      "recall": 0.782608695652174,
+      "f1-score": 0.7659574468085106,
+      "support": 23.0
+    },
+    "RELIABILITY": {
+      "precision": 0.84375,
+      "recall": 0.8181818181818182,
+      "f1-score": 0.8307692307692308,
+      "support": 33.0
+    },
+    "accuracy": 0.8035714285714286,
+    "macro avg": {
+      "precision": 0.796875,
+      "recall": 0.8003952569169961,
+      "f1-score": 0.7983633387888707,
+      "support": 56.0
+    },
+    "weighted avg": {
+      "precision": 0.8052455357142857,
+      "recall": 0.8035714285714286,
+      "f1-score": 0.804150105213935,
+      "support": 56.0
+    }
+  }
+}

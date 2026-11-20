@@ -88,14 +88,14 @@ google-bert/bert-base-uncased
 
 Main MLM training settings:
 
-| Parameter | Value |
-|---|---:|
-| Epochs | 3 |
-| Learning rate | 2e-5 |
-| MLM probability | 0.15 |
-| Weight decay | 0.01 |
-| Random seed | 42 |
-| Maximum sequence length | 256 |
+| Parameter               | Value |
+|-------------------------|------:|
+| Epochs                  |   3   |
+| Learning rate           |  2e-5 |
+| MLM probability         |  0.15 |
+| Weight decay            |  0.01 |
+| Random seed             |   42  |
+| Maximum sequence length |  256  |
 
 Final model location:
 
@@ -106,17 +106,17 @@ D:/GridBERT_v0_3/models/GridBERT-v0.3/final
 ### Fixed-mask evaluation
 
 | Model | Loss | Perplexity |
-|---|---:|---:|
-| Base BERT | 2.6431 | 14.06 |
-| GridBERT v0.1 | 1.4324 | 4.19 |
-| GridBERT v0.2 | 1.4301 | 4.18 |
+|---------------|-----------:|------:|
+| Base BERT     | 2.6431     | 14.06 |
+| GridBERT v0.1 | 1.4324     | 4.19  |
+| GridBERT v0.2 | 1.4301     | 4.18  |
 | GridBERT v0.3 | **1.3880** | **4.01** |
 
 ### Frozen grid-domain benchmark
 
-| Model | Hit@1 | Hit@5 | MRR |
-|---|---:|---:|---:|
-| Base BERT | 0.280 | 0.600 | 0.430 |
+| Model         | Hit@1     | Hit@5     | MRR       |
+|---------------|----------:|----------:|----------:|
+| Base BERT     | 0.280     | 0.600     | 0.430     |
 | GridBERT v0.3 | **0.760** | **0.920** | **0.845** |
 
 ---

@@ -1,0 +1,152 @@
+{
+  "analysis": "Paired comparison of frozen Base BERT and GridBERT v0.3 reliability classifiers.",
+  "bootstrap": {
+    "method": "paired percentile bootstrap",
+    "samples": 10000,
+    "confidence_level": 0.95,
+    "seed": 42
+  },
+  "mcnemar": {
+    "method": "two-sided exact McNemar test",
+    "multiple_test_correction": "Holm correction",
+    "number_of_tests": 2
+  },
+  "internal_test": {
+    "dataset": "Internal Test",
+    "n": 56,
+    "base": {
+      "accuracy": 0.7321428571428571,
+      "precision": 0.75,
+      "recall": 0.8181818181818182,
+      "f1": 0.782608695652174,
+      "specificity": 0.6086956521739131,
+      "macro_f1": 0.7168857431749243,
+      "tn": 14,
+      "fp": 9,
+      "fn": 6,
+      "tp": 27
+    },
+    "grid": {
+      "accuracy": 0.8035714285714286,
+      "precision": 0.84375,
+      "recall": 0.8181818181818182,
+      "f1": 0.8307692307692308,
+      "specificity": 0.782608695652174,
+      "macro_f1": 0.7983633387888707,
+      "tn": 18,
+      "fp": 5,
+      "fn": 6,
+      "tp": 27
+    },
+    "mcnemar": {
+      "both_correct": 39,
+      "base_only_correct": 2,
+      "grid_only_correct": 6,
+      "both_wrong": 9,
+      "discordant_pairs": 8,
+      "mcnemar_exact_p": 0.2890625,
+      "holm_adjusted_p": 0.42022705078125
+    },
+    "bootstrap": {
+      "accuracy": {
+        "difference_mean": 0.07117321428571428,
+        "ci_95_low": -0.017857142857142905,
+        "ci_95_high": 0.1607142857142858
+      },
+      "precision": {
+        "difference_mean": 0.0935047016236368,
+        "ci_95_low": -0.010389610389610393,
+        "ci_95_high": 0.20846470630953393
+      },
+      "recall": {
+        "difference_mean": -0.00022582671873166627,
+        "ci_95_low": -0.08823529411764697,
+        "ci_95_high": 0.08571428571428563
+      },
+      "f1": {
+        "difference_mean": 0.04820944775321255,
+        "ci_95_low": -0.026597131681877495,
+        "ci_95_high": 0.12590827727389922
+      },
+      "specificity": {
+        "difference_mean": 0.17395143919746212,
+        "ci_95_low": 0.0,
+        "ci_95_high": 0.37499999999999994
+      },
+      "macro_f1": {
+        "difference_mean": 0.08217907896412596,
+        "ci_95_low": -0.019750750136388495,
+        "ci_95_high": 0.18845188794744527
+      }
+    }
+  },
+  "external_test": {
+    "dataset": "External Unseen Test",
+    "n": 92,
+    "base": {
+      "accuracy": 0.782608695652174,
+      "precision": 0.78125,
+      "recall": 0.8928571428571429,
+      "f1": 0.8333333333333334,
+      "specificity": 0.6111111111111112,
+      "macro_f1": 0.7604166666666667,
+      "tn": 22,
+      "fp": 14,
+      "fn": 6,
+      "tp": 50
+    },
+    "grid": {
+      "accuracy": 0.8478260869565217,
+      "precision": 0.9038461538461539,
+      "recall": 0.8392857142857143,
+      "f1": 0.8703703703703703,
+      "specificity": 0.8611111111111112,
+      "macro_f1": 0.8430799220272904,
+      "tn": 31,
+      "fp": 5,
+      "fn": 9,
+      "tp": 47
+    },
+    "mcnemar": {
+      "both_correct": 67,
+      "base_only_correct": 5,
+      "grid_only_correct": 11,
+      "both_wrong": 9,
+      "discordant_pairs": 16,
+      "mcnemar_exact_p": 0.210113525390625,
+      "holm_adjusted_p": 0.42022705078125
+    },
+    "bootstrap": {
+      "accuracy": {
+        "difference_mean": 0.06555869565217393,
+        "ci_95_low": -0.021739130434782594,
+        "ci_95_high": 0.15217391304347827
+      },
+      "precision": {
+        "difference_mean": 0.12281742229960582,
+        "ci_95_low": 0.04832430179454004,
+        "ci_95_high": 0.20979385227402372
+      },
+      "recall": {
+        "difference_mean": -0.053107892515064474,
+        "ci_95_low": -0.14814814814814814,
+        "ci_95_high": 0.03703703703703709
+      },
+      "f1": {
+        "difference_mean": 0.03746749741951189,
+        "ci_95_low": -0.03181883518957826,
+        "ci_95_high": 0.10803301231320783
+      },
+      "specificity": {
+        "difference_mean": 0.24987613840475387,
+        "ci_95_low": 0.11428571428571432,
+        "ci_95_high": 0.4
+      },
+      "macro_f1": {
+        "difference_mean": 0.08367030099413109,
+        "ci_95_low": -0.003905678775524284,
+        "ci_95_high": 0.1764952626468691
+      }
+    }
+  }
+}
