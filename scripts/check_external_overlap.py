@@ -1,26 +1,37 @@
-"""
-check_external_overlap.py
-
-Purpose
--------
-Checks external-test candidate passages against the frozen
-GridText v0.3 corpus for possible textual overlap.
-
-The script performs two checks:
-
-1. Exact normalized word match
-   Determines whether the complete external passage appears
-   word-for-word in a GridText v0.3 document.
-
-2. Near-duplicate screening
-   Breaks each external passage into 5-word shingles and
-   determines what proportion of those shingles occur in the
-   same GridText v0.3 document.
-
-No candidates are automatically removed.
-
-Results are written to overlap_check.csv for manual review.
-"""
+# ============================================================
+# GridBERT v0.3 - Check External Candidate Overlap
+#
+# Purpose:
+#   Screen external-test candidate passages against the frozen
+#   GridText v0.3 corpus for exact matches and near-duplicate
+#   text.
+#
+# Pipeline position:
+#   External test quality-control step.
+#   Runs after build_external_candidates.py and before
+#   build_overlap_review.py.
+#
+# Method:
+#   Performs two overlap checks:
+#     1. Exact normalized-word matching
+#     2. 5-word shingle containment for near-duplicate screening
+#
+# Review thresholds:
+#   >= 0.80  = REVIEW_NEAR_DUPLICATE
+#   0.50-0.80 = REVIEW_POSSIBLE_OVERLAP
+#   < 0.50   = CLEAR
+#
+# Important:
+#   This script does not automatically remove any candidate.
+#   Flagged passages are passed to manual review.
+#
+# Main inputs:
+#   External candidate passages
+#   Full GridText v0.3 extracted text corpus
+#
+# Main output:
+#   overlap_check.csv
+# ============================================================
 
 import csv
 import re

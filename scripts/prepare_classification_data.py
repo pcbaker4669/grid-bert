@@ -1,3 +1,42 @@
+# ============================================================
+# GridBERT v0.3 - Prepare Reliability Classification Data
+#
+# Purpose:
+#   Prepare the final binary reliability dataset for supervised
+#   fine-tuning and document how its source documents relate to
+#   GridBERT v0.3 pretraining.
+#
+# Pipeline position:
+#   Supervised dataset preparation.
+#   Runs after manual annotation and before
+#   train_reliability_classifier.py.
+#
+# Method:
+#   Verifies pretraining provenance, checks for document leakage,
+#   and divides the labeled dataset at the source-document level
+#   into training, validation, and internal test sets.
+#
+# Split design:
+#   Approximately 70% training
+#   15% validation
+#   15% internal test
+#
+# Main inputs:
+#   Final manually labeled binary reliability dataset
+#   GridText v0.3 corpus manifest
+#   MLM training and validation JSONL files
+#
+# Main outputs:
+#   train.csv
+#   validation.csv
+#   test.csv
+#   reliability_binary_with_pretraining_status.csv
+#
+# Important:
+#   Source documents, rather than individual passages, are used
+#   as the grouping unit to prevent supervised document leakage.
+# ============================================================
+
 from pathlib import Path
 import json
 

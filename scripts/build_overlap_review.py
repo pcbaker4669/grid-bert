@@ -1,3 +1,34 @@
+# ============================================================
+# GridBERT v0.3 - Build External Overlap Review File
+#
+# Purpose:
+#   Create a human-reviewable file containing external test
+#   candidates that were flagged for possible overlap with
+#   the GridText v0.3 corpus.
+#
+# Pipeline position:
+#   External test quality-control step.
+#   Runs after check_external_overlap.py and before the final
+#   external annotation dataset is frozen.
+#
+# Method:
+#   Reads the automated overlap results, removes passages
+#   classified as CLEAR, and combines each flagged passage
+#   with its closest matching GridText v0.3 text.
+#
+# Main inputs:
+#   External candidate passages
+#   Automated overlap-check results
+#
+# Main output:
+#   overlap_review.csv
+#
+# Manual step:
+#   The output includes blank decision and notes fields so
+#   flagged passages can be reviewed before inclusion in the
+#   final external test set.
+# ============================================================
+
 import csv
 from pathlib import Path
 

@@ -1,3 +1,36 @@
+# ============================================================
+# GridBERT v0.3 - Domain-Adaptive MLM Pretraining
+#
+# Purpose:
+#   Create GridBERT by continuing masked-language-model
+#   pretraining from Base BERT on the GridText corpus.
+#
+# Pipeline position:
+#   Stage 3 - Domain-adaptive pretraining.
+#   Runs after prepare_gridtext.py and before MLM evaluation
+#   and downstream reliability-classification fine-tuning.
+#
+# Method:
+#   Loads the prepared MLM training and validation sequences,
+#   initializes a masked-language model from Base BERT, and
+#   dynamically masks tokens during training.
+#
+#   Base BERT is evaluated before training so its validation
+#   loss and perplexity can be compared with the final
+#   GridBERT model.
+#
+# Main inputs:
+#   training/train.jsonl
+#   training/validation.jsonl
+#   Base BERT starting model
+#
+# Main outputs:
+#   Trained GridBERT model
+#   Saved tokenizer
+#   Training checkpoints
+#   Validation loss and perplexity
+# ============================================================
+
 import json
 import math
 from pathlib import Path

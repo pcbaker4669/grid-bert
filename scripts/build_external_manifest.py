@@ -1,5 +1,20 @@
-# this will build a manifest of the external unseen documents, including provenance information
-# we will check if the documents were used in the v0.3 manifest, and if they were used in MLM training or validation
+# ============================================================
+# GridBERT v0.3 - Extract GridText
+#
+# Purpose:
+#   Extract plain text from the original electric-grid PDF corpus.
+#
+# Pipeline position:
+#   Stage 1 - Corpus preparation.
+#   This is the first processing step before MLM training data
+#   are created.
+#
+# Main input:
+#   Original GridText PDF files.
+#
+# Main output:
+#   Extracted text files used by prepare_gridtext.py.
+# ============================================================
 
 import csv
 import json

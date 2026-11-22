@@ -1,3 +1,39 @@
+# ============================================================
+# GridBERT v0.3 - Prepare GridText for MLM Pretraining
+#
+# Purpose:
+#   Convert the extracted GridText corpus into tokenized
+#   training and validation sequences for masked-language-model
+#   pretraining.
+#
+# Pipeline position:
+#   Stage 2 - MLM data preparation.
+#   Runs after extract_gridtext.py and before train_gridbert.py.
+#
+# Method:
+#   Splits source documents into training and validation groups
+#   at the document level, then tokenizes each document into
+#   BERT-compatible chunks.
+#
+#   Each sequence includes:
+#       [CLS]
+#       content tokens
+#       [SEP]
+#
+#   Source-document provenance is retained for every sequence.
+#
+# Main input:
+#   Extracted GridText .txt files.
+#
+# Main outputs:
+#   training/train.jsonl
+#   training/validation.jsonl
+#
+# Important:
+#   Documents, not individual chunks, are separated between
+#   training and validation to prevent document leakage.
+# ============================================================
+
 from pathlib import Path
 import json
 import random

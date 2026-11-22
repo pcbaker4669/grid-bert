@@ -1,3 +1,37 @@
+# ============================================================
+# GridBERT v0.3 - Create Grid-Domain Benchmark
+#
+# Purpose:
+#   Create the frozen masked-word benchmark used to compare
+#   Base BERT and GridBERT on electric-grid language.
+#
+# Pipeline position:
+#   MLM evaluation setup.
+#   Runs after the GridBERT evaluation methodology is defined
+#   and before evaluate_grid_benchmark.py.
+#
+# Method:
+#   Defines 50 masked-word prompts covering major grid-domain
+#   topics such as markets, reliability, resource adequacy,
+#   transmission, congestion, dispatch, load, generation,
+#   reserves, and institutions.
+#
+#   Each benchmark item contains:
+#       category
+#       masked prompt
+#       expected word
+#
+# Main input:
+#   Benchmark prompts defined directly in this script.
+#
+# Main output:
+#   grid_domain_benchmark.jsonl
+#
+# Important:
+#   This script creates the benchmark only. It does not run
+#   model inference or calculate benchmark scores.
+# ============================================================
+
 import json
 from pathlib import Path
 from config_loader import load_config, data_path

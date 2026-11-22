@@ -1,3 +1,38 @@
+# ============================================================
+# GridBERT v0.3 - Evaluate Grid-Domain Benchmark
+#
+# Purpose:
+#   Compare Base BERT and GridBERT v0.3 on the frozen
+#   electric-grid masked-word benchmark.
+#
+# Pipeline position:
+#   MLM evaluation stage.
+#   Runs after create_grid_benchmark.py and after GridBERT
+#   domain-adaptive pretraining has been completed.
+#
+# Method:
+#   Runs the same masked prompts through both models and
+#   measures the rank of the expected domain-specific word.
+#
+# Evaluation metrics:
+#   Hit@1
+#   Hit@5
+#   Mean Reciprocal Rank (MRR)
+#
+# Main inputs:
+#   Base BERT
+#   Trained GridBERT v0.3
+#   grid_domain_benchmark.jsonl
+#
+# Main outputs:
+#   Detailed benchmark results CSV
+#   Benchmark summary JSON
+#
+# Important:
+#   This is a frozen quantitative benchmark and is separate
+#   from the exploratory compare_gridbert.py script.
+# ============================================================
+
 import json
 import csv
 from pathlib import Path

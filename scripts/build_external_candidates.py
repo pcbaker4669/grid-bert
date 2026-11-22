@@ -1,22 +1,34 @@
-"""
-build_external_candidates.py
-
-Purpose
--------
-Build candidate passages for the completely external,
-unseen-document evaluation of the GridBERT reliability
-classification experiment.
-
-The primary candidate-generation procedure is intentionally
-consistent with build_reliability_candidates.py.
-
-For slide-oriented documents that produce fewer than 50
-usable sentence-based candidates, a bullet-text fallback is
-also used.
-
-Candidate-selection keywords are used only to construct the
-annotation sample. They do NOT determine ground-truth labels.
-"""
+# ============================================================
+# GridBERT v0.3 - Build External Reliability Candidates
+#
+# Purpose:
+#   Generate candidate passages from the external unseen
+#   documents for manual reliability annotation.
+#
+# Pipeline position:
+#   External evaluation construction.
+#   Runs after build_external_manifest.py and before overlap
+#   screening and final external annotation.
+#
+# Method:
+#   Uses the same reliability-signal and general-grid keyword
+#   approach used for the original supervised dataset.
+#
+#   For slide-oriented documents with too few sentence-based
+#   candidates, adjacent bullet lines are combined into
+#   longer passages using a fallback procedure.
+#
+# Important:
+#   Candidate-selection keywords are used only to select
+#   passages for review. They do not determine final labels.
+#
+# Main input:
+#   Extracted text from the external unseen documents.
+#
+# Main outputs:
+#   External candidate annotation CSV
+#   external_candidate_selection.csv
+# ============================================================
 
 import csv
 import random

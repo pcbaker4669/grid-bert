@@ -1,3 +1,40 @@
+# ============================================================
+# GridBERT v0.3 - Fixed-Mask MLM Evaluation
+#
+# Purpose:
+#   Compare Base BERT and GridBERT v0.3 on the same masked
+#   validation tokens so MLM loss and perplexity can be
+#   compared directly.
+#
+# Pipeline position:
+#   MLM evaluation stage.
+#   Runs after GridBERT pretraining and before downstream
+#   classification fine-tuning.
+#
+# Method:
+#   Creates a reproducible masked version of the MLM validation
+#   set using a fixed random seed and standard BERT masking:
+#       80% replaced with [MASK]
+#       10% replaced with a random token
+#       10% left unchanged
+#
+#   The same fixed masked dataset is then evaluated by both
+#   Base BERT and GridBERT.
+#
+# Main inputs:
+#   MLM validation file
+#   Base BERT
+#   Trained GridBERT v0.3
+#
+# Main outputs:
+#   Fixed masked validation dataset
+#   fixed-mask loss and perplexity results
+#
+# Important:
+#   Using identical masked tokens removes mask-selection
+#   randomness from the model comparison.
+# ============================================================
+
 from pathlib import Path
 import json
 import math

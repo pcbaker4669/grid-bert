@@ -1,3 +1,24 @@
+# ============================================================
+# GridBERT v0.3 - Analyze GridText Corpus
+#
+# Purpose:
+#   Summarize the GridText corpus by source organization,
+#   including document counts, BERT tokens, words, pages,
+#   and each source's percentage of the total corpus.
+#
+# Pipeline position:
+#   Corpus analysis / documentation step.
+#   Runs after the GridText corpus manifest has been created.
+#   It is not required for model training, but documents the
+#   composition of the corpus used for GridBERT pretraining.
+#
+# Main input:
+#   gridtext_manifest_v03.csv
+#
+# Main output:
+#   corpus_summary.csv
+# ============================================================
+
 import csv
 from collections import defaultdict
 from config_loader import load_config, data_path

@@ -1,3 +1,40 @@
+# ============================================================
+# GridBERT v0.3 - Extract GridText Corpus
+#
+# Purpose:
+#   Extract and clean text from the original electric-grid PDF
+#   corpus and create the document-level corpus manifest.
+#
+# Pipeline position:
+#   Stage 1 - Corpus construction.
+#   This is the first major processing step in the GridBERT
+#   workflow and runs before corpus analysis or MLM preparation.
+#
+# Method:
+#   Recursively reads the raw PDF corpus, extracts page text,
+#   normalizes whitespace, and saves a corresponding .txt file
+#   while preserving the source-directory structure.
+#
+#   The extracted text is also tokenized to calculate corpus
+#   statistics for each document.
+#
+# Main input:
+#   Original GridText PDF corpus.
+#
+# Main outputs:
+#   Cleaned GridText .txt files
+#   gridtext_manifest_v03.csv
+#
+# Manifest fields:
+#   source
+#   filename
+#   pages
+#   characters
+#   words
+#   bert_tokens
+#   text_file
+# ============================================================
+
 from config_loader import load_config, data_path
 from pathlib import Path
 import csv

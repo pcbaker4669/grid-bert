@@ -1,17 +1,37 @@
-"""
-evaluate_reliability_classifier.py
-
-Purpose
--------
-Evaluates a previously fine-tuned reliability classifier on either:
-
-1. The internal held-out test set
-2. The external unseen-document test set
-
-No training or model selection occurs in this script.
-
-The same evaluation procedure is used for Base BERT and GridBERT v0.3.
-"""
+# ============================================================
+# GridBERT v0.3 - Evaluate Reliability Classifier
+#
+# Purpose:
+#   Evaluate a previously fine-tuned Base BERT or GridBERT
+#   reliability classifier on either the internal held-out test
+#   set or the external unseen-document test set.
+#
+# Pipeline position:
+#   Final model evaluation stage.
+#   Runs after train_reliability_classifier.py and before
+#   analyze_reliability_results.py.
+#
+# Method:
+#   Loads the selected frozen classifier, runs inference on the
+#   requested test set, and calculates classification metrics.
+#
+# Supported models:
+#   basebert
+#   gridbert
+#
+# Supported datasets:
+#   internal
+#   external
+#
+# Main outputs:
+#   Metrics JSON
+#   Passage-level prediction CSV
+#   Confusion matrix CSV
+#
+# Important:
+#   No training, hyperparameter tuning, or checkpoint selection
+#   occurs in this script.
+# ============================================================
 
 import argparse
 import csv

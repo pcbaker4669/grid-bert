@@ -1,3 +1,33 @@
+# ============================================================
+# GridBERT v0.3 - Qualitative Fill-Mask Comparison
+#
+# Purpose:
+#   Compare Base BERT and GridBERT on a small set of
+#   hand-written electric-grid masked-word examples.
+#
+# Pipeline position:
+#   Development / qualitative evaluation utility.
+#   Used after GridBERT pretraining to inspect how domain
+#   adaptation changes masked-word predictions.
+#
+# Method:
+#   Loads Base BERT and GridBERT using the Hugging Face
+#   fill-mask pipeline and compares the top five predictions
+#   for the same grid-related sentences.
+#
+# Main inputs:
+#   Base BERT reference model
+#   Trained GridBERT model
+#
+# Main output:
+#   Console output showing the top five fill-mask predictions
+#   and scores from each model.
+#
+# Important:
+#   This script is exploratory and qualitative. It is not the
+#   frozen grid-domain benchmark used for final reported results.
+# ============================================================
+
 from transformers import pipeline
 from config_loader import load_config, data_path
 

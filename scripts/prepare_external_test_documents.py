@@ -1,3 +1,33 @@
+# ============================================================
+# GridBERT v0.3 - Prepare External Test Documents
+#
+# Purpose:
+#   Extract plain text from the external unseen-document PDFs
+#   so they can be used to construct the external reliability
+#   evaluation set.
+#
+# Pipeline position:
+#   First step in external-test construction.
+#   Runs before build_external_manifest.py and
+#   build_external_candidates.py.
+#
+# Method:
+#   Recursively reads the external PDF directory, extracts text
+#   from each page, and saves a matching .txt file while
+#   preserving the source-directory structure.
+#
+# Main input:
+#   External unseen-document PDF files.
+#
+# Main output:
+#   Extracted external .txt files used by later provenance,
+#   candidate-generation, and overlap-checking scripts.
+#
+# Important:
+#   This script only prepares the external documents. It does
+#   not create candidates, assign labels, or evaluate models.
+# ============================================================
+
 from pathlib import Path
 import fitz
 import yaml

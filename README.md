@@ -124,7 +124,7 @@ D:/GridBERT_v0_3/models/GridBERT-v0.3/final
 ## Reliability Classification Dataset
 
 The initial candidate set contained:
-
+ 
 - **300 reliability-signal candidates**
 - **200 general-grid candidates**
 - **500 total candidates**
@@ -383,16 +383,64 @@ GridBERT-v0.3/
 │   ├── evaluate_reliability_classifier.py
 │   └── analyze_reliability_results.py
 │
-└── classification/
-    ├── data/
-    ├── models/
-    ├── results/
-    └── external_test/
-        ├── raw/
-        ├── text/
-        ├── candidates/
-        ├── provenance/
-        └── results/
+├── corpus/
+│   └── gridtext_manifest_v03.csv
+│
+├── classification/
+│   ├── data/
+│   │   ├── reliability_binary_training.csv
+│   │   ├── reliability_binary_with_pretraining_status.csv
+│   │   ├── reliability_candidates.csv
+│   │   ├── reliability_candidates_refined.csv
+│   │   ├── train.csv
+│   │   ├── validation.csv
+│   │   └── test.csv
+│   │
+│   ├── external_test/
+│   │   ├── candidates/
+│   │   │   ├── external_unseen_candidates.csv
+│   │   │   ├── external_unseen_candidates_clean.csv
+│   │   │   └── external_unseen_binary.csv
+│   │   │
+│   │   ├── provenance/
+│   │   │   ├── external_candidate_selection.csv
+│   │   │   ├── external_unseen_manifest.csv
+│   │   │   ├── overlap_check.csv
+│   │   │   └── overlap_review.csv
+│   │   │
+│   │   └── results/
+│   │       ├── basebert_external_confusion_matrix.csv
+│   │       ├── basebert_external_metrics.json
+│   │       ├── basebert_external_predictions.csv
+│   │       ├── gridbert_v03_external_confusion_matrix.csv
+│   │       ├── gridbert_v03_external_metrics.json
+│   │       └── gridbert_v03_external_predictions.csv
+│   │
+│   ├── results/
+│   │   ├── basebert_internal_confusion_matrix.csv
+│   │   ├── basebert_internal_metrics.json
+│   │   ├── basebert_internal_predictions.csv
+│   │   ├── gridbert_v03_internal_confusion_matrix.csv
+│   │   ├── gridbert_v03_internal_metrics.json
+│   │   ├── gridbert_v03_internal_predictions.csv
+│   │   │
+│   │   └── final_analysis/
+│   │       ├── external_disagreements.csv
+│   │       ├── external_per_document_results.csv
+│   │       ├── final_model_comparison.csv
+│   │       ├── internal_disagreements.csv
+│   │       ├── paired_statistical_tests.csv
+│   │       └── statistical_analysis_summary.json
+│   │
+│   └── models/
+│       └── DO NOT PUT ON GITHUB
+│
+└── experiments/
+    └── GridBERT-v0.3/
+        ├── fixed_mask_results.json
+        ├── grid_domain_benchmark.jsonl
+        ├── grid_domain_benchmark_results.csv
+        └── grid_domain_benchmark_summary.json
 ```
 
 The large data and model directories may be stored outside the Git repository and referenced through `config.yaml`.

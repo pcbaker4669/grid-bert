@@ -1,24 +1,41 @@
-"""
-analyze_reliability_results.py
-
-Final statistical analysis for the GridBERT reliability experiment.
-
-Compares frozen Base BERT and GridBERT v0.3 predictions on:
-
-1. Internal held-out test set
-2. External unseen-document test set
-
-Outputs:
-- Final model comparison table
-- Exact McNemar tests
-- Paired bootstrap 95% confidence intervals
-- External per-document performance
-- Internal disagreement cases
-- External disagreement cases
-- Reproducibility summary
-
-No model training or inference occurs here.
-"""
+# ============================================================
+# GridBERT v0.3 - Final Reliability Results Analysis
+#
+# Purpose:
+#   Perform the final statistical comparison of the frozen
+#   Base BERT and GridBERT v0.3 reliability classifiers using
+#   their saved internal and external test predictions.
+#
+# Pipeline position:
+#   Final stage - Statistical analysis and experiment summary.
+#   Runs after evaluate_reliability_classifier.py has produced
+#   predictions for both models on both test sets.
+#
+# Main inputs:
+#   Base BERT internal predictions
+#   GridBERT internal predictions
+#   Base BERT external predictions
+#   GridBERT external predictions
+#   Base BERT and GridBERT training summaries
+#
+# Main analyses:
+#   Exact McNemar tests
+#   Holm correction
+#   Paired bootstrap confidence intervals
+#   External per-document analysis
+#   Model disagreement analysis
+#
+# Main outputs:
+#   final_model_comparison.csv
+#   paired_statistical_tests.csv
+#   external_per_document_results.csv
+#   internal_disagreements.csv
+#   external_disagreements.csv
+#   statistical_analysis_summary.json
+#
+# Important:
+#   No model training or inference occurs in this script.
+# ============================================================
 
 import json
 import math

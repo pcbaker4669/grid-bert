@@ -1,25 +1,41 @@
-"""
-train_reliability_classifier.py
-
-Purpose
--------
-Fine-tunes either Base BERT or GridBERT v0.3 for binary
-electric-grid reliability classification.
-
-The two models use:
-
-- identical training data
-- identical validation data
-- identical tokenizer
-- identical hyperparameters
-- identical random seed
-- identical model-selection criterion
-
-The validation F1 score is used to select the best checkpoint.
-
-The internal test set and external unseen test set are NOT
-used by this script.
-"""
+# ============================================================
+# GridBERT v0.3 - Train Reliability Classifier
+#
+# Purpose:
+#   Fine-tune either Base BERT or GridBERT v0.3 for binary
+#   electric-grid reliability classification.
+#
+# Pipeline position:
+#   Downstream supervised fine-tuning stage.
+#   Runs after prepare_classification_data.py and before
+#   evaluate_reliability_classifier.py.
+#
+# Method:
+#   Trains Base BERT and GridBERT using the same training data,
+#   validation data, tokenizer, hyperparameters, random seed,
+#   and model-selection criterion.
+#
+#   The checkpoint with the highest validation F1 is retained.
+#
+# Special GridBERT handling:
+#   GridBERT keeps its domain-adapted encoder, restores the
+#   original bert-base-uncased pooler, and receives a new
+#   two-class classification head.
+#
+# Main inputs:
+#   train.csv
+#   validation.csv
+#   Base BERT or GridBERT v0.3
+#
+# Main outputs:
+#   Best fine-tuned classifier
+#   training_history.csv
+#   training_summary.json
+#
+# Important:
+#   The internal and external test sets are not used during
+#   training or checkpoint selection.
+# ============================================================
 
 import argparse
 import csv
