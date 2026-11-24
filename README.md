@@ -121,7 +121,7 @@ Main MLM training settings:
 Final model location:
 
 ```text
-D:/GridBERT_v0_3/models/GridBERT-v0.3/final
+models/GridBERT-v0.3/final
 ```
 
 ### Fixed-mask evaluation
@@ -617,6 +617,10 @@ statistical_analysis_summary.json
 # Installation
 
 The project was developed under Windows 11 using a Python virtual environment.
+The existing experimental virtual environment was configured
+with Python 3.12.7. Installed package versions were recovered
+from the virtual environment and are documented in
+`requirements_frozen.txt`.
 
 Create a virtual environment:
 
@@ -831,15 +835,10 @@ Do not overwrite the original GridBERT v0.3 model, classifier outputs, predictio
 
 A separate directory should be used for new experiments, for example:
 
-```text
-D:/GridBERT_v0_4/
-```
-
-or:
-
-```text
-D:/GridBERT_v0_3_reproduction/
-```
+Future experiments should use separate data directories to
+avoid overwriting the original GridBERT v0.3 artifacts.
+The data directory for each experiment is specified in
+config.yaml.
 
 The following should be treated as permanent v0.3 artifacts:
 
