@@ -1,161 +1,161 @@
-source,filename,pages,characters,words,bert_tokens
-academic,717221.pdf,66,130086,20781,29097
-academic,90-Geo.-Wash.-L.-Rev.-147.pdf,90,286226,41719,67528
-academic,Joshua-C.-Macey-Shelley-Welton-2024.pdf,84,267605,36803,63011
-doe,2024 The Future of Resource Adequacy Report.pdf,37,101715,13214,21685
-doe,2026 DOE 202(c) Orders _ Department of Energy.pdf,18,32778,5266,7747
-doe,DOE Final EO Report (REVISED OCT 27).pdf,73,121714,18497,34514
-doe,doe-emergency-order-202-26-24.pdf,11,29046,4181,7009
-doe,doe-emergency-order-no-202-26-23pdf.pdf,11,23903,3400,4815
-doe,DOE_OP_2024_Report-Transmission_Impact_Assessment.pdf,16,40892,5542,7922
-doe,eo-14262.pdf,2,5820,887,1208
-doe,Memorandum-Summary-Report-2024.pdf,15,29732,4014,5744
-doe,motion-intervene-and-request-rehearing-natural-resources-defense-council-citizens-4.pdf,130,229749,33904,56989
-doe,national-transmission-needs-study-draft-july-2026.pdf,112,262370,35260,60215
-doe,NationalTransmissionPlanningStudy-Chapter1.pdf,46,87651,11830,20115
-doe,NationalTransmissionPlanningStudy-Chapter2.pdf,143,240889,33577,59540
-doe,NationalTransmissionPlanningStudy-Chapter3.pdf,148,267249,37676,63238
-doe,NationalTransmissionPlanningStudy-Chapter4.pdf,70,108033,16007,25273
-doe,NationalTransmissionPlanningStudy-Chapter5.pdf,72,115043,16570,27688
-doe,NationalTransmissionPlanningStudy-Chapter6.pdf,17,27730,3818,5258
-doe,NationalTransmissionPlanningStudy-ExecutiveSummary.pdf,37,67852,9292,13782
-doe,National_Transmission_Needs_Study_2023.pdf,294,799900,112030,173892
-doe,pjms-202c-application-202-26-35.pdf,6,13275,2008,2903
-doe,queued-upbut-need-transmission.pdf,5,20442,2896,4265
-ferc,20210520-3045_Summer Assessment 2021.PDF,24,59654,8983,12739
-ferc,20210723-4001_2021 Common Metrics Report.PDF,76,123558,18673,32793
-ferc,20210907-4002_Energy and Ancillary Services Markets.pdf,26,58714,8467,13725
-ferc,20211021-3035_Winter Assessment 2021-2022 - Report.pdf,23,68761,10485,14196
-ferc,20211116-3047_Cold Weather Report_ November 2021.pdf,313,664946,98678,142358
-ferc,20220519-3090_Report_Summer Assessment 2022.pdf,42,112974,16192,24771
-ferc,20221020-3103_Report_2022-2023 Winter Assessment.pdf,48,141585,19630,31770
-ferc,20231116-3118_24_Winter-Assessment_1116_1020.pdf,59,210959,28948,48032
-ferc,20240131-4000_2023 Common Metrics Report.pdf,80,135905,19525,38789
-ferc,23_Summer-Assessment_0517_1745.pdf,55,189284,27305,42004
-ferc,24_Energy-Markets-Primer_0117_DIGITAL_0.pdf,152,560893,108508,135267
-ferc,24_Summer Assessment_0523_0940.pdf,52,151675,21284,34485
-ferc,24_Winter-Storm_Elliot_0207_UPDATE.pdf,167,423049,62654,87492
-ferc,25_Annual Assessment of Demand Response_1212.pdf,45,99076,13771,25449
-ferc,25_Arctic Storms Performance Review_0416.pdf,35,94116,13905,18451
-ferc,26_State-of-the-Market_0324_1430.pdf,51,117301,17190,28476
-ferc,26_Summer Assessment_0529.pdf,33,69534,10075,15678
-ferc,A3_State of the Markets 2023_Presentation_0320_1715.pdf,10,2171,333,489
-ferc,Electric Power Markets _ Federal Energy Regulatory Commission.pdf,7,12995,1878,2496
-ferc,Electric Transmission Siting _ Federal Energy Regulatory Commission.pdf,2,2471,353,417
-ferc,Interregional Transfer Capability Study_FERC.pdf,268,527186,79526,123755
-ferc,Summer Assessment 2025_june 2025.pdf,49,78474,10996,17231
-ferc,Winter Assessment 2024-2025 Long Version.pdf,37,59196,8371,13253
-ferc,Winter Assessment 2025-2026 Long Version_Clean.docx.pdf,51,84799,11786,19111
-caiso,2024-annual-report-on-market-issues-and-performance-aug-07-2025.pdf,350,809631,123108,214959
-caiso,2025-annual-report-on-market-issues-and-performance.pdf,354,809457,123288,215456
-caiso,appendix-c-board-approved-2022-2023-transmission-plan.pdf,336,1656149,272922,613515
-caiso,appendix-c-board-approved-2023-2024-transmission-plan.pdf,327,1245515,206502,442498
-caiso,appendix-c-board-approved-2024-2025-transmission-plan.pdf,210,1032574,188528,350509
-caiso,appendix-f-board-approved-2022-2023-transmission-plan.pdf,159,292837,44259,72982
-caiso,appendix-f-board-approved-2023-2024-transmission-plan.pdf,122,200271,30192,52607
-caiso,appendix-f-board-approved-2024-2025-transmission-plan.pdf,134,230952,34121,59103
-caiso,appendix-g-board-approved-2022-2023-transmission-plan.pdf,82,198537,35862,56046
-caiso,appendix-g-board-approved-2023-2024-transmission-plan.pdf,55,123684,20215,30850
-caiso,appendix-g-board-approved-2024-2025-transmission-plan.pdf,83,188379,31352,48541
-caiso,appendixc-boardapproved-2021-2022transmissionplan.pdf,301,765843,127818,260768
-caiso,appendixc-boardapproved2020-2021transmissionplan.pdf,274,833142,141191,286200
-caiso,appendixf-boardapproved-2021-2022transmissionplan.pdf,14,11761,2124,4514
-caiso,board-approved-2025-2026-transmission-plan-appendix-f-policy.pdf,205,344410,51315,81659
-caiso,board-approved-2025-2026-transmission-plan-appendix-g-economic.pdf,76,188430,31282,51438
-caiso,board-approved-2025-2026-transmission-plan.pdf,181,365043,55366,80598
-caiso,boardapproved2020-2021transmissionplan.pdf,453,961155,146274,223450
-caiso,iso-board-approved-2022-2023-transmission-plan.pdf,180,408795,61144,94352
-caiso,iso-board-approved-2023-2024-transmission-plan.pdf,173,365171,54157,85752
-caiso,iso-board-approved-2024-2025-transmission-plan.pdf,202,425631,63836,99510
-caiso,isoboardapproved-2019-2020transmissionplan.pdf,410,890454,135028,200586
-caiso,isoboardapproved-2021-2022transmissionplan.pdf,391,884369,134591,213146
-iso_ne,TCS_Final Report_Public.pdf,51,63706,7472,24954
-iso_ne,2021-annual-markets-report.pdf,261,739924,110634,186631
-iso_ne,2022-annual-markets-report.pdf,220,548048,81646,143528
-iso_ne,2023-annual-markets-report.pdf,191,469068,69098,122424
-iso_ne,2024-annual-markets-report.pdf,211,534095,77660,134212
-iso_ne,2025-annual-markets-report.pdf,205,509630,73817,127756
-iso_ne,imm-markets-primer.pdf,83,203340,29019,52831
-iso_ne,20231114_rsp_final.pdf,130,344229,48223,85147
-iso_ne,final_2025_rsp.pdf,72,177158,25041,42504
-iso_ne,2024_02_14_pac_2050_transmission_study_final.pdf,58,128999,18839,31404
-iso_ne,transmission_planning_technical_guide_rev_8.pdf,89,244019,36440,60984
-miso,BPM-011-r34_Resource_Adequacy_CLEAN.pdf,275,547361,85594,130674
-miso,BPM-020-r34 Transmission Planning CLEAN.pdf,255,573327,84192,129769
-miso,MTEP21 Full Report including Executive Summary611674.pdf,187,295462,45072,70182
-miso,MTEP22 Report.pdf,174,281171,42361,70341
-miso,MTEP23 Full Report.pdf,215,362925,55734,90965
-miso,MTEP24 Full Report.pdf,295,391488,59470,91698
-miso,MTEP25 Report.pdf,180,190039,26989,54854
-miso,2026 Reliability Imperative Report744320.pdf,18,40500,5489,8175
-nerc,1991-ltra.pdf,80,0,0,0
-nerc,1992-ltra.pdf,65,0,0,0
-nerc,1993-ltra.pdf,41,0,0,0
-nerc,1994-ltra.pdf,41,0,0,0
-nerc,1995-ltra.pdf,48,0,0,0
-nerc,1996-ltra.pdf,51,0,0,0
-nerc,2000ras-final-11200.pdf,77,227956,33902,45893
-nerc,2009_ltra_v1_1_errata.pdf,448,1205236,178448,263997
-nerc,2010_ltra_v2-.pdf,431,1099728,161335,235094
-nerc,2011-ltra_final.pdf,556,1464090,217695,321872
-nerc,2012_ltra.pdf,337,1265163,189553,313609
-nerc,2013_ltra_final.pdf,178,580118,86340,129536
-nerc,2014ltra_eratta.pdf,115,413871,61010,94678
-nerc,2015ltra---final-report.pdf,103,365942,53550,82079
-nerc,97ras.pdf,55,173848,26046,34526
-nerc,98ras.pdf,69,202891,30327,41209
-nerc,99ras.pdf,88,266955,39946,54472
-nerc,ltra2003.pdf,88,238673,34721,53093
-nerc,ltra2004.pdf,91,250823,36792,54553
-nerc,ltra2005.pdf,109,250224,36636,56568
-nerc,ltra2006.pdf,134,331642,48383,74686
-nerc,ltra2007.pdf,238,602729,89023,131326
-nerc,ltra2008v1_2.pdf,303,768785,114375,169116
-nerc,nerc_ltra_12132017_final.pdf,82,224693,34101,51057
-nerc,nerc_ltra_2018_12202018.pdf,151,379220,57739,90471
-nerc,nerc_ltra_2019.pdf,114,269854,41433,65142
-nerc,nerc_ltra_2020.pdf,167,410663,63426,98085
-nerc,nerc_ltra_2021.pdf,126,343957,51590,81561
-nerc,nerc_ltra_2022.pdf,111,322913,48496,76261
-nerc,nerc_ltra_2023.pdf,135,406586,60807,94081
-nerc,nerc_ltra_2024.pdf,149,441025,66249,102039
-nerc,nerc_ltra_2025.pdf,182,600930,88837,134040
-pjm,2026-2027-bra-report.pdf,20,34593,5295,11051
-pjm,2027-2028-bra-report.pdf,20,35725,5493,11376
-pjm,2028-2029-bra-results-report.pdf,20,34552,5316,10910
-pjm,2029-2030-planning-period-parameters-for-base-residual-auction-report.pdf,9,14920,2358,4424
-pjm,2025-load-report.pdf,36,34373,5709,11869
-pjm,2026-load-report.pdf,36,33025,5431,11042
-pjm,m14b.pdf,182,454427,68397,94911
-pjm,m19.pdf,53,110407,16981,24270
-pjm,2025-annual-state-of-the-market-report-for-pjm.pdf,68,47873,7169,20531
-pjm,20260506-powering-reliability-through-market-design.pdf,70,244203,36148,50489
-pjm,2021-rtep-report.pdf,301,638842,97754,167187
-pjm,2022-rtep-report.pdf,297,653200,98151,167584
-pjm,2023-rtep-report.pdf,302,630640,95880,165979
-pjm,2024-rtep-report.pdf,352,809638,122489,217012
-pjm,2025-rtep-report.pdf,361,791863,118221,219252
-spp,2023 itp assessment report v1.0.pdf,194,282031,40578,92580
-spp,2023 itp short-term reliability projects report.pdf,6,6130,889,1598
-spp,2024 itp assessment report v1.0.pdf,219,359491,53393,114499
-spp,2025 itp report v1.0.pdf,277,450025,66701,142081
-spp,2025 itp short-term reliability projects report.pdf,10,13154,1778,3571
-spp,2023 annual state of the market report v2.pdf,274,553468,81313,136182
-spp,2024_annual_state_of_the_market_report.pdf,240,460917,66869,115446
-spp,2021 spp june resource adequacy report.pdf,44,52202,8287,12126
-spp,2022 spp june resource adequacy report.pdf,46,53536,8470,12552
-spp,2023 spp june resource adequacy report.pdf,46,58478,9226,13447
-spp,2024 spp june resource adequacy report.pdf,47,19592,2884,5777
-spp,2025 spp summer resource adequacy report.pdf,44,17633,2593,4836
-spp,2025 spp winter resource adequacy report.pdf,45,16759,2467,4684
-spp,2026 spp summer resource adequacy report.pdf,43,14970,2156,3318
-spp,spp long term resource adequacy study report.pdf,46,61929,10987,18962
-spp,spp resource adequacy future resource study report.pdf,51,74853,11651,19331
-spp,2019 SPP Transmission Expansion Plan Report.pdf,40,57771,8349,17657
-spp,2020 SPP Transmission Expansion Plan Report.pdf,25,30911,4170,11913
-spp,2021 SPP Transmission Expansion Plan Report Appendix 1.pdf,24,30981,4094,11860
-spp,2022 SPP Transmission Expansion Plan Report.pdf,27,32472,4471,12571
-spp,2023 SPP Transmission Expansion Plan Report.pdf,26,31010,4276,11950
-spp,2024 SPP Transmission Expansion Plan Report.pdf,34,44219,6311,16730
-spp,2025 SPP Transmission Expansion Plan Report.pdf,64,74020,11419,26897
-spp,comprehensive review of spp's response to the feb. 2021 winter storm 2021 07 19.pdf,109,216579,29076,60297
+source,filename,pages,characters,words,bert_tokens,text_file
+academic,717221.pdf,66,130086,20781,29097,academic/717221.txt
+academic,90-Geo.-Wash.-L.-Rev.-147.pdf,90,286226,41719,67528,academic/90-Geo.-Wash.-L.-Rev.-147.txt
+academic,Joshua-C.-Macey-Shelley-Welton-2024.pdf,84,267605,36803,63011,academic/Joshua-C.-Macey-Shelley-Welton-2024.txt
+doe,2024 The Future of Resource Adequacy Report.pdf,37,101715,13214,21685,doe/2024 The Future of Resource Adequacy Report.txt
+doe,2026 DOE 202(c) Orders _ Department of Energy.pdf,18,32778,5266,7747,doe/2026 DOE 202(c) Orders _ Department of Energy.txt
+doe,DOE Final EO Report (REVISED OCT 27).pdf,73,121714,18497,34514,doe/DOE Final EO Report (REVISED OCT 27).txt
+doe,doe-emergency-order-202-26-24.pdf,11,29046,4181,7009,doe/doe-emergency-order-202-26-24.txt
+doe,doe-emergency-order-no-202-26-23pdf.pdf,11,23903,3400,4815,doe/doe-emergency-order-no-202-26-23pdf.txt
+doe,DOE_OP_2024_Report-Transmission_Impact_Assessment.pdf,16,40892,5542,7922,doe/DOE_OP_2024_Report-Transmission_Impact_Assessment.txt
+doe,eo-14262.pdf,2,5820,887,1208,doe/eo-14262.txt
+doe,Memorandum-Summary-Report-2024.pdf,15,29732,4014,5744,doe/Memorandum-Summary-Report-2024.txt
+doe,motion-intervene-and-request-rehearing-natural-resources-defense-council-citizens-4.pdf,130,229749,33904,56989,doe/motion-intervene-and-request-rehearing-natural-resources-defense-council-citizens-4.txt
+doe,national-transmission-needs-study-draft-july-2026.pdf,112,262370,35260,60215,doe/national-transmission-needs-study-draft-july-2026.txt
+doe,NationalTransmissionPlanningStudy-Chapter1.pdf,46,87651,11830,20115,doe/NationalTransmissionPlanningStudy-Chapter1.txt
+doe,NationalTransmissionPlanningStudy-Chapter2.pdf,143,240889,33577,59540,doe/NationalTransmissionPlanningStudy-Chapter2.txt
+doe,NationalTransmissionPlanningStudy-Chapter3.pdf,148,267249,37676,63238,doe/NationalTransmissionPlanningStudy-Chapter3.txt
+doe,NationalTransmissionPlanningStudy-Chapter4.pdf,70,108033,16007,25273,doe/NationalTransmissionPlanningStudy-Chapter4.txt
+doe,NationalTransmissionPlanningStudy-Chapter5.pdf,72,115043,16570,27688,doe/NationalTransmissionPlanningStudy-Chapter5.txt
+doe,NationalTransmissionPlanningStudy-Chapter6.pdf,17,27730,3818,5258,doe/NationalTransmissionPlanningStudy-Chapter6.txt
+doe,NationalTransmissionPlanningStudy-ExecutiveSummary.pdf,37,67852,9292,13782,doe/NationalTransmissionPlanningStudy-ExecutiveSummary.txt
+doe,National_Transmission_Needs_Study_2023.pdf,294,799900,112030,173892,doe/National_Transmission_Needs_Study_2023.txt
+doe,pjms-202c-application-202-26-35.pdf,6,13275,2008,2903,doe/pjms-202c-application-202-26-35.txt
+doe,queued-upbut-need-transmission.pdf,5,20442,2896,4265,doe/queued-upbut-need-transmission.txt
+ferc,20210520-3045_Summer Assessment 2021.PDF,24,59654,8983,12739,ferc/20210520-3045_Summer Assessment 2021.txt
+ferc,20210723-4001_2021 Common Metrics Report.PDF,76,123558,18673,32793,ferc/20210723-4001_2021 Common Metrics Report.txt
+ferc,20210907-4002_Energy and Ancillary Services Markets.pdf,26,58714,8467,13725,ferc/20210907-4002_Energy and Ancillary Services Markets.txt
+ferc,20211021-3035_Winter Assessment 2021-2022 - Report.pdf,23,68761,10485,14196,ferc/20211021-3035_Winter Assessment 2021-2022 - Report.txt
+ferc,20211116-3047_Cold Weather Report_ November 2021.pdf,313,664946,98678,142358,ferc/20211116-3047_Cold Weather Report_ November 2021.txt
+ferc,20220519-3090_Report_Summer Assessment 2022.pdf,42,112974,16192,24771,ferc/20220519-3090_Report_Summer Assessment 2022.txt
+ferc,20221020-3103_Report_2022-2023 Winter Assessment.pdf,48,141585,19630,31770,ferc/20221020-3103_Report_2022-2023 Winter Assessment.txt
+ferc,20231116-3118_24_Winter-Assessment_1116_1020.pdf,59,210959,28948,48032,ferc/20231116-3118_24_Winter-Assessment_1116_1020.txt
+ferc,20240131-4000_2023 Common Metrics Report.pdf,80,135905,19525,38789,ferc/20240131-4000_2023 Common Metrics Report.txt
+ferc,23_Summer-Assessment_0517_1745.pdf,55,189284,27305,42004,ferc/23_Summer-Assessment_0517_1745.txt
+ferc,24_Energy-Markets-Primer_0117_DIGITAL_0.pdf,152,560893,108508,135267,ferc/24_Energy-Markets-Primer_0117_DIGITAL_0.txt
+ferc,24_Summer Assessment_0523_0940.pdf,52,151675,21284,34485,ferc/24_Summer Assessment_0523_0940.txt
+ferc,24_Winter-Storm_Elliot_0207_UPDATE.pdf,167,423049,62654,87492,ferc/24_Winter-Storm_Elliot_0207_UPDATE.txt
+ferc,25_Annual Assessment of Demand Response_1212.pdf,45,99076,13771,25449,ferc/25_Annual Assessment of Demand Response_1212.txt
+ferc,25_Arctic Storms Performance Review_0416.pdf,35,94116,13905,18451,ferc/25_Arctic Storms Performance Review_0416.txt
+ferc,26_State-of-the-Market_0324_1430.pdf,51,117301,17190,28476,ferc/26_State-of-the-Market_0324_1430.txt
+ferc,26_Summer Assessment_0529.pdf,33,69534,10075,15678,ferc/26_Summer Assessment_0529.txt
+ferc,A3_State of the Markets 2023_Presentation_0320_1715.pdf,10,2171,333,489,ferc/A3_State of the Markets 2023_Presentation_0320_1715.txt
+ferc,Electric Power Markets _ Federal Energy Regulatory Commission.pdf,7,12995,1878,2496,ferc/Electric Power Markets _ Federal Energy Regulatory Commission.txt
+ferc,Electric Transmission Siting _ Federal Energy Regulatory Commission.pdf,2,2471,353,417,ferc/Electric Transmission Siting _ Federal Energy Regulatory Commission.txt
+ferc,Interregional Transfer Capability Study_FERC.pdf,268,527186,79526,123755,ferc/Interregional Transfer Capability Study_FERC.txt
+ferc,Summer Assessment 2025_june 2025.pdf,49,78474,10996,17231,ferc/Summer Assessment 2025_june 2025.txt
+ferc,Winter Assessment 2024-2025 Long Version.pdf,37,59196,8371,13253,ferc/Winter Assessment 2024-2025 Long Version.txt
+ferc,Winter Assessment 2025-2026 Long Version_Clean.docx.pdf,51,84799,11786,19111,ferc/Winter Assessment 2025-2026 Long Version_Clean.docx.txt
+caiso,2024-annual-report-on-market-issues-and-performance-aug-07-2025.pdf,350,809631,123108,214959,caiso/market_monitoring/2024-annual-report-on-market-issues-and-performance-aug-07-2025.txt
+caiso,2025-annual-report-on-market-issues-and-performance.pdf,354,809457,123288,215456,caiso/market_monitoring/2025-annual-report-on-market-issues-and-performance.txt
+caiso,appendix-c-board-approved-2022-2023-transmission-plan.pdf,336,1656149,272922,613515,caiso/transmission_planning/appendix-c-board-approved-2022-2023-transmission-plan.txt
+caiso,appendix-c-board-approved-2023-2024-transmission-plan.pdf,327,1245515,206502,442498,caiso/transmission_planning/appendix-c-board-approved-2023-2024-transmission-plan.txt
+caiso,appendix-c-board-approved-2024-2025-transmission-plan.pdf,210,1032574,188528,350509,caiso/transmission_planning/appendix-c-board-approved-2024-2025-transmission-plan.txt
+caiso,appendix-f-board-approved-2022-2023-transmission-plan.pdf,159,292837,44259,72982,caiso/transmission_planning/appendix-f-board-approved-2022-2023-transmission-plan.txt
+caiso,appendix-f-board-approved-2023-2024-transmission-plan.pdf,122,200271,30192,52607,caiso/transmission_planning/appendix-f-board-approved-2023-2024-transmission-plan.txt
+caiso,appendix-f-board-approved-2024-2025-transmission-plan.pdf,134,230952,34121,59103,caiso/transmission_planning/appendix-f-board-approved-2024-2025-transmission-plan.txt
+caiso,appendix-g-board-approved-2022-2023-transmission-plan.pdf,82,198537,35862,56046,caiso/transmission_planning/appendix-g-board-approved-2022-2023-transmission-plan.txt
+caiso,appendix-g-board-approved-2023-2024-transmission-plan.pdf,55,123684,20215,30850,caiso/transmission_planning/appendix-g-board-approved-2023-2024-transmission-plan.txt
+caiso,appendix-g-board-approved-2024-2025-transmission-plan.pdf,83,188379,31352,48541,caiso/transmission_planning/appendix-g-board-approved-2024-2025-transmission-plan.txt
+caiso,appendixc-boardapproved-2021-2022transmissionplan.pdf,301,765843,127818,260768,caiso/transmission_planning/appendixc-boardapproved-2021-2022transmissionplan.txt
+caiso,appendixc-boardapproved2020-2021transmissionplan.pdf,274,833142,141191,286200,caiso/transmission_planning/appendixc-boardapproved2020-2021transmissionplan.txt
+caiso,appendixf-boardapproved-2021-2022transmissionplan.pdf,14,11761,2124,4514,caiso/transmission_planning/appendixf-boardapproved-2021-2022transmissionplan.txt
+caiso,board-approved-2025-2026-transmission-plan-appendix-f-policy.pdf,205,344410,51315,81659,caiso/transmission_planning/board-approved-2025-2026-transmission-plan-appendix-f-policy.txt
+caiso,board-approved-2025-2026-transmission-plan-appendix-g-economic.pdf,76,188430,31282,51438,caiso/transmission_planning/board-approved-2025-2026-transmission-plan-appendix-g-economic.txt
+caiso,board-approved-2025-2026-transmission-plan.pdf,181,365043,55366,80598,caiso/transmission_planning/board-approved-2025-2026-transmission-plan.txt
+caiso,boardapproved2020-2021transmissionplan.pdf,453,961155,146274,223450,caiso/transmission_planning/boardapproved2020-2021transmissionplan.txt
+caiso,iso-board-approved-2022-2023-transmission-plan.pdf,180,408795,61144,94352,caiso/transmission_planning/iso-board-approved-2022-2023-transmission-plan.txt
+caiso,iso-board-approved-2023-2024-transmission-plan.pdf,173,365171,54157,85752,caiso/transmission_planning/iso-board-approved-2023-2024-transmission-plan.txt
+caiso,iso-board-approved-2024-2025-transmission-plan.pdf,202,425631,63836,99510,caiso/transmission_planning/iso-board-approved-2024-2025-transmission-plan.txt
+caiso,isoboardapproved-2019-2020transmissionplan.pdf,410,890454,135028,200586,caiso/transmission_planning/isoboardapproved-2019-2020transmissionplan.txt
+caiso,isoboardapproved-2021-2022transmissionplan.pdf,391,884369,134591,213146,caiso/transmission_planning/isoboardapproved-2021-2022transmissionplan.txt
+iso_ne,TCS_Final Report_Public.pdf,51,63706,7472,24954,iso_ne/interconnection/TCS_Final Report_Public.txt
+iso_ne,2021-annual-markets-report.pdf,261,739924,110634,186631,iso_ne/markets/2021-annual-markets-report.txt
+iso_ne,2022-annual-markets-report.pdf,220,548048,81646,143528,iso_ne/markets/2022-annual-markets-report.txt
+iso_ne,2023-annual-markets-report.pdf,191,469068,69098,122424,iso_ne/markets/2023-annual-markets-report.txt
+iso_ne,2024-annual-markets-report.pdf,211,534095,77660,134212,iso_ne/markets/2024-annual-markets-report.txt
+iso_ne,2025-annual-markets-report.pdf,205,509630,73817,127756,iso_ne/markets/2025-annual-markets-report.txt
+iso_ne,imm-markets-primer.pdf,83,203340,29019,52831,iso_ne/markets/imm-markets-primer.txt
+iso_ne,20231114_rsp_final.pdf,130,344229,48223,85147,iso_ne/regional_system_plans/20231114_rsp_final.txt
+iso_ne,final_2025_rsp.pdf,72,177158,25041,42504,iso_ne/regional_system_plans/final_2025_rsp.txt
+iso_ne,2024_02_14_pac_2050_transmission_study_final.pdf,58,128999,18839,31404,iso_ne/transmission/2024_02_14_pac_2050_transmission_study_final.txt
+iso_ne,transmission_planning_technical_guide_rev_8.pdf,89,244019,36440,60984,iso_ne/transmission/transmission_planning_technical_guide_rev_8.txt
+miso,BPM-011-r34_Resource_Adequacy_CLEAN.pdf,275,547361,85594,130674,miso/manuals/BPM-011-r34_Resource_Adequacy_CLEAN.txt
+miso,BPM-020-r34 Transmission Planning CLEAN.pdf,255,573327,84192,129769,miso/manuals/BPM-020-r34 Transmission Planning CLEAN.txt
+miso,MTEP21 Full Report including Executive Summary611674.pdf,187,295462,45072,70182,miso/mtep/MTEP21 Full Report including Executive Summary611674.txt
+miso,MTEP22 Report.pdf,174,281171,42361,70341,miso/mtep/MTEP22 Report.txt
+miso,MTEP23 Full Report.pdf,215,362925,55734,90965,miso/mtep/MTEP23 Full Report.txt
+miso,MTEP24 Full Report.pdf,295,391488,59470,91698,miso/mtep/MTEP24 Full Report.txt
+miso,MTEP25 Report.pdf,180,190039,26989,54854,miso/mtep/MTEP25 Report.txt
+miso,2026 Reliability Imperative Report744320.pdf,18,40500,5489,8175,miso/reliability_imperative/2026 Reliability Imperative Report744320.txt
+nerc,1991-ltra.pdf,80,0,0,0,nerc/ltra/1991-ltra.txt
+nerc,1992-ltra.pdf,65,0,0,0,nerc/ltra/1992-ltra.txt
+nerc,1993-ltra.pdf,41,0,0,0,nerc/ltra/1993-ltra.txt
+nerc,1994-ltra.pdf,41,0,0,0,nerc/ltra/1994-ltra.txt
+nerc,1995-ltra.pdf,48,0,0,0,nerc/ltra/1995-ltra.txt
+nerc,1996-ltra.pdf,51,0,0,0,nerc/ltra/1996-ltra.txt
+nerc,2000ras-final-11200.pdf,77,227956,33902,45893,nerc/ltra/2000ras-final-11200.txt
+nerc,2009_ltra_v1_1_errata.pdf,448,1205236,178448,263997,nerc/ltra/2009_ltra_v1_1_errata.txt
+nerc,2010_ltra_v2-.pdf,431,1099728,161335,235094,nerc/ltra/2010_ltra_v2-.txt
+nerc,2011-ltra_final.pdf,556,1464090,217695,321872,nerc/ltra/2011-ltra_final.txt
+nerc,2012_ltra.pdf,337,1265163,189553,313609,nerc/ltra/2012_ltra.txt
+nerc,2013_ltra_final.pdf,178,580118,86340,129536,nerc/ltra/2013_ltra_final.txt
+nerc,2014ltra_eratta.pdf,115,413871,61010,94678,nerc/ltra/2014ltra_eratta.txt
+nerc,2015ltra---final-report.pdf,103,365942,53550,82079,nerc/ltra/2015ltra---final-report.txt
+nerc,97ras.pdf,55,173848,26046,34526,nerc/ltra/97ras.txt
+nerc,98ras.pdf,69,202891,30327,41209,nerc/ltra/98ras.txt
+nerc,99ras.pdf,88,266955,39946,54472,nerc/ltra/99ras.txt
+nerc,ltra2003.pdf,88,238673,34721,53093,nerc/ltra/ltra2003.txt
+nerc,ltra2004.pdf,91,250823,36792,54553,nerc/ltra/ltra2004.txt
+nerc,ltra2005.pdf,109,250224,36636,56568,nerc/ltra/ltra2005.txt
+nerc,ltra2006.pdf,134,331642,48383,74686,nerc/ltra/ltra2006.txt
+nerc,ltra2007.pdf,238,602729,89023,131326,nerc/ltra/ltra2007.txt
+nerc,ltra2008v1_2.pdf,303,768785,114375,169116,nerc/ltra/ltra2008v1_2.txt
+nerc,nerc_ltra_12132017_final.pdf,82,224693,34101,51057,nerc/ltra/nerc_ltra_12132017_final.txt
+nerc,nerc_ltra_2018_12202018.pdf,151,379220,57739,90471,nerc/ltra/nerc_ltra_2018_12202018.txt
+nerc,nerc_ltra_2019.pdf,114,269854,41433,65142,nerc/ltra/nerc_ltra_2019.txt
+nerc,nerc_ltra_2020.pdf,167,410663,63426,98085,nerc/ltra/nerc_ltra_2020.txt
+nerc,nerc_ltra_2021.pdf,126,343957,51590,81561,nerc/ltra/nerc_ltra_2021.txt
+nerc,nerc_ltra_2022.pdf,111,322913,48496,76261,nerc/ltra/nerc_ltra_2022.txt
+nerc,nerc_ltra_2023.pdf,135,406586,60807,94081,nerc/ltra/nerc_ltra_2023.txt
+nerc,nerc_ltra_2024.pdf,149,441025,66249,102039,nerc/ltra/nerc_ltra_2024.txt
+nerc,nerc_ltra_2025.pdf,182,600930,88837,134040,nerc/ltra/nerc_ltra_2025.txt
+pjm,2026-2027-bra-report.pdf,20,34593,5295,11051,pjm/bra/2026-2027-bra-report.txt
+pjm,2027-2028-bra-report.pdf,20,35725,5493,11376,pjm/bra/2027-2028-bra-report.txt
+pjm,2028-2029-bra-results-report.pdf,20,34552,5316,10910,pjm/bra/2028-2029-bra-results-report.txt
+pjm,2029-2030-planning-period-parameters-for-base-residual-auction-report.pdf,9,14920,2358,4424,pjm/bra/2029-2030-planning-period-parameters-for-base-residual-auction-report.txt
+pjm,2025-load-report.pdf,36,34373,5709,11869,pjm/load/2025-load-report.txt
+pjm,2026-load-report.pdf,36,33025,5431,11042,pjm/load/2026-load-report.txt
+pjm,m14b.pdf,182,454427,68397,94911,pjm/manuals/m14b.txt
+pjm,m19.pdf,53,110407,16981,24270,pjm/manuals/m19.txt
+pjm,2025-annual-state-of-the-market-report-for-pjm.pdf,68,47873,7169,20531,pjm/market/2025-annual-state-of-the-market-report-for-pjm.txt
+pjm,20260506-powering-reliability-through-market-design.pdf,70,244203,36148,50489,pjm/market/20260506-powering-reliability-through-market-design.txt
+pjm,2021-rtep-report.pdf,301,638842,97754,167187,pjm/transmission/2021-rtep-report.txt
+pjm,2022-rtep-report.pdf,297,653200,98151,167584,pjm/transmission/2022-rtep-report.txt
+pjm,2023-rtep-report.pdf,302,630640,95880,165979,pjm/transmission/2023-rtep-report.txt
+pjm,2024-rtep-report.pdf,352,809638,122489,217012,pjm/transmission/2024-rtep-report.txt
+pjm,2025-rtep-report.pdf,361,791863,118221,219252,pjm/transmission/2025-rtep-report.txt
+spp,2023 itp assessment report v1.0.pdf,194,282031,40578,92580,spp/itp/2023 itp assessment report v1.0.txt
+spp,2023 itp short-term reliability projects report.pdf,6,6130,889,1598,spp/itp/2023 itp short-term reliability projects report.txt
+spp,2024 itp assessment report v1.0.pdf,219,359491,53393,114499,spp/itp/2024 itp assessment report v1.0.txt
+spp,2025 itp report v1.0.pdf,277,450025,66701,142081,spp/itp/2025 itp report v1.0.txt
+spp,2025 itp short-term reliability projects report.pdf,10,13154,1778,3571,spp/itp/2025 itp short-term reliability projects report.txt
+spp,2023 annual state of the market report v2.pdf,274,553468,81313,136182,spp/market/2023 annual state of the market report v2.txt
+spp,2024_annual_state_of_the_market_report.pdf,240,460917,66869,115446,spp/market/2024_annual_state_of_the_market_report.txt
+spp,2021 spp june resource adequacy report.pdf,44,52202,8287,12126,spp/resource/2021 spp june resource adequacy report.txt
+spp,2022 spp june resource adequacy report.pdf,46,53536,8470,12552,spp/resource/2022 spp june resource adequacy report.txt
+spp,2023 spp june resource adequacy report.pdf,46,58478,9226,13447,spp/resource/2023 spp june resource adequacy report.txt
+spp,2024 spp june resource adequacy report.pdf,47,19592,2884,5777,spp/resource/2024 spp june resource adequacy report.txt
+spp,2025 spp summer resource adequacy report.pdf,44,17633,2593,4836,spp/resource/2025 spp summer resource adequacy report.txt
+spp,2025 spp winter resource adequacy report.pdf,45,16759,2467,4684,spp/resource/2025 spp winter resource adequacy report.txt
+spp,2026 spp summer resource adequacy report.pdf,43,14970,2156,3318,spp/resource/2026 spp summer resource adequacy report.txt
+spp,spp long term resource adequacy study report.pdf,46,61929,10987,18962,spp/resource/spp long term resource adequacy study report.txt
+spp,spp resource adequacy future resource study report.pdf,51,74853,11651,19331,spp/resource/spp resource adequacy future resource study report.txt
+spp,2019 SPP Transmission Expansion Plan Report.pdf,40,57771,8349,17657,spp/step/2019 SPP Transmission Expansion Plan Report.txt
+spp,2020 SPP Transmission Expansion Plan Report.pdf,25,30911,4170,11913,spp/step/2020 SPP Transmission Expansion Plan Report.txt
+spp,2021 SPP Transmission Expansion Plan Report Appendix 1.pdf,24,30981,4094,11860,spp/step/2021 SPP Transmission Expansion Plan Report Appendix 1.txt
+spp,2022 SPP Transmission Expansion Plan Report.pdf,27,32472,4471,12571,spp/step/2022 SPP Transmission Expansion Plan Report.txt
+spp,2023 SPP Transmission Expansion Plan Report.pdf,26,31010,4276,11950,spp/step/2023 SPP Transmission Expansion Plan Report.txt
+spp,2024 SPP Transmission Expansion Plan Report.pdf,34,44219,6311,16730,spp/step/2024 SPP Transmission Expansion Plan Report.txt
+spp,2025 SPP Transmission Expansion Plan Report.pdf,64,74020,11419,26897,spp/step/2025 SPP Transmission Expansion Plan Report.txt
+spp,comprehensive review of spp's response to the feb. 2021 winter storm 2021 07 19.pdf,109,216579,29076,60297,spp/stormreview/comprehensive review of spp's response to the feb. 2021 winter storm 2021 07 19.txt

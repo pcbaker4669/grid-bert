@@ -78,6 +78,27 @@ Prepared MLM data:
 
 ---
 
+### Corpus Availability and Provenance
+
+The public corpus manifest is available at:
+
+[gridtext_manifest_v03.csv](corpus/gridtext_manifest_v03.csv)
+
+The manifest contains the source organization, filename, page
+count, character count, word count, BERT token count, and
+relative extracted-text path for each document.
+
+The original PDFs, extracted text, and MLM training and
+validation files are not included in this repository.
+
+Original source URLs were not retained during the construction
+of GridText v0.3. Future versions will record source URLs,
+retrieval dates, and SHA-256 checksums to improve corpus
+provenance and reproducibility.
+
+A full rebuild requires obtaining the original source documents.
+
+
 ## GridBERT v0.3 Pretraining
 
 GridBERT v0.3 was initialized from:
@@ -362,19 +383,21 @@ A typical project layout is:
 GridBERT-v0.3/
 │
 ├── config.yaml
-├── config_loader.py
+├── README.md
 │
 ├── scripts/
+│   ├── config_loader.py
 │   ├── extract_gridtext.py
+│   ├── analyze_corpus.py
 │   ├── prepare_gridtext.py
 │   ├── train_gridbert.py
 │   ├── fixed_mask_eval.py
 │   ├── create_grid_benchmark.py
 │   ├── evaluate_grid_benchmark.py
 │   ├── compare_gridbert.py
-│   ├── freeze_gridibert_v01.py
 │   ├── build_reliability_candidates.py
 │   ├── prepare_classification_data.py
+│   ├── prepare_external_test_documents.py
 │   ├── build_external_manifest.py
 │   ├── build_external_candidates.py
 │   ├── check_external_overlap.py
@@ -449,11 +472,25 @@ The large data and model directories may be stored outside the Git repository an
 
 # Script Reference
 
+## `scripts/config_loader.py`
+
+Shared configuration utility that loads `config.yaml` and resolves file paths relative to the configured data root.
+
+Imported by other GridBERT scripts throughout the workflow.
+
 ## `scripts/extract_gridtext.py`
 
 Extracts text from the original PDF corpus.
 
 Used before any model training.
+
+## `scripts/analyze_corpus.py`
+
+Summarizes the GridText corpus by source organization, including document counts, pages, words, BERT tokens, and percentage of the total corpus.
+
+Runs after `extract_gridtext.py` creates the corpus manifest.
+
+Produces `corpus_summary.csv`.
 
 ## `scripts/prepare_gridtext.py`
 
@@ -499,6 +536,12 @@ Uses reliability-signal and general-grid keyword pools for candidate selection o
 ## `scripts/prepare_classification_data.py`
 
 Creates the final binary classification dataset and document-level train/validation/test split.
+
+## `scripts/prepare_external_test_documents.py`
+
+Extracts text from the external unseen-document PDFs while preserving their source-directory structure.
+
+This is the first step in external test construction and runs before `build_external_manifest.py` and `build_external_candidates.py`.
 
 ## `scripts/build_external_manifest.py`
 
@@ -631,28 +674,84 @@ CPU and CUDA training are both valid, but Base BERT and GridBERT should be train
 
 There are three useful levels of reproduction.
 
-## 1. Full rebuild
+## 1. Full Rebuild
 
-Use this when starting from the original PDF collection:
+### Stage 1: Corpus Preparation
 
-```text
-Raw PDFs
-  ↓
-Extract text
-  ↓
-Prepare GridText
-  ↓
-Train GridBERT
-  ↓
-Evaluate MLM model
-  ↓
-Prepare supervised dataset
-  ↓
-Fine-tune both classifiers
-  ↓
-Run internal and external tests
-  ↓
-Run statistical analysis
+```powershell
+python scripts/extract_gridtext.py
+python scripts/analyze_corpus.py
+python scripts/prepare_gridtext.py
+```
+
+### Stage 2: Domain-Adaptive Pretraining
+
+```powershell
+python scripts/train_gridbert.py
+```
+
+### Stage 3: MLM Evaluation
+
+```powershell
+python scripts/fixed_mask_eval.py
+python scripts/create_grid_benchmark.py
+python scripts/evaluate_grid_benchmark.py
+```
+
+Optional qualitative model comparison:
+
+```powershell
+python scripts/compare_gridbert.py
+```
+
+### Stage 4: Supervised Dataset Construction
+
+```powershell
+python scripts/build_reliability_candidates.py
+```
+
+Manually annotate the candidate passages and retain only
+RELIABILITY and NOT RELIABILITY labels in the final binary
+dataset.
+
+```powershell
+python scripts/prepare_classification_data.py
+```
+
+### Stage 5: Supervised Fine-Tuning
+
+```powershell
+python scripts/train_reliability_classifier.py --model basebert
+python scripts/train_reliability_classifier.py --model gridbert
+```
+
+### Stage 6: External Test Construction
+
+```powershell
+python scripts/prepare_external_test_documents.py
+python scripts/build_external_manifest.py
+python scripts/build_external_candidates.py
+python scripts/check_external_overlap.py
+python scripts/build_overlap_review.py
+```
+
+Manually review flagged overlap cases, remove excluded
+passages, and annotate the remaining candidates to create
+the final external binary test set.
+
+### Stage 7: Final Evaluation
+
+```powershell
+python scripts/evaluate_reliability_classifier.py --model basebert --dataset internal
+python scripts/evaluate_reliability_classifier.py --model gridbert --dataset internal
+python scripts/evaluate_reliability_classifier.py --model basebert --dataset external
+python scripts/evaluate_reliability_classifier.py --model gridbert --dataset external
+```
+
+### Stage 8: Statistical Analysis
+
+```powershell
+python scripts/analyze_reliability_results.py
 ```
 
 ## 2. Downstream reproduction
