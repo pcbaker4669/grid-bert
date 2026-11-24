@@ -1,0 +1,30 @@
+cff-version: 1.2.0
+message: "If you use GridBERT in your research, please cite this software."
+
+title: "GridBERT: Domain-Adaptive Pretraining for Electric-Grid Reliability Classification"
+
+type: software
+
+authors:
+  - family-names: "Baker"
+    given-names: "Peter C."
+    affiliation: "George Mason University"
+
+version: "0.3"
+
+license: "Apache-2.0"
+
+abstract: >
+  GridBERT is a domain-adapted BERT model designed for
+  U.S. electric-grid technical, regulatory, planning,
+  and reliability text. This repository documents the
+  domain-adaptive pretraining, reliability classification,
+  evaluation, and statistical analysis of GridBERT v0.3.
+
+keywords:
+  - BERT
+  - Natural Language Processing
+  - Electric Grid
+  - Reliability Classification
+  - Domain-Adaptive Pretraining
+  - Computational Social Science
