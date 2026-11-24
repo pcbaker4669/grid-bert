@@ -1,0 +1,38 @@
+{
+  "model": "Base BERT",
+  "model_source": "google-bert/bert-base-uncased",
+  "tokenizer": "google-bert/bert-base-uncased",
+  "train_file": "classification/data/train.csv",
+  "validation_file": "classification/data/validation.csv",
+  "training_passages": 260,
+  "validation_passages": 100,
+  "training_label_counts": {
+    "1": 154,
+    "0": 106
+  },
+  "validation_label_counts": {
+    "1": 68,
+    "0": 32
+  },
+  "hyperparameters": {
+    "max_length": 256,
+    "batch_size": 8,
+    "epochs": 5,
+    "learning_rate": 2e-05,
+    "weight_decay": 0.01,
+    "warmup_ratio": 0.1,
+    "gradient_clip_norm": 1.0,
+    "seed": 42,
+    "class_weights": null,
+    "resampling": false
+  },
+  "model_selection": "highest validation F1",
+  "best_epoch": 4,
+  "best_validation_metrics": {
+    "loss": 0.4579635285414182,
+    "accuracy": 0.77,
+    "precision": 0.7922077922077922,
+    "recall": 0.8970588235294118,
+    "f1": 0.8413793103448276
+  }
+}

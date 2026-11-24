@@ -60,7 +60,6 @@ fixed_validation.jsonl
 # Trained models and checkpoints
 # These files are large and should not be stored in normal Git.
 # =========================================================
-models/
 checkpoints/
 checkpoint-*/
 
