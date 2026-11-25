@@ -1,4 +1,5 @@
 # GridBERT v0.3
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.24544637.svg)](https://doi.org/10.5281/zenodo.24544637)
 
 GridBERT v0.3 is a domain-adapted BERT model for U.S. electric-grid text. It was created by continuing masked-language-model (MLM) pretraining from `google-bert/bert-base-uncased` on a corpus of electric-grid documents and then evaluating whether domain adaptation improves downstream reliability classification.
 
@@ -883,14 +884,10 @@ original copyright and licensing terms.
 
 # Citation
 
-If this repository accompanies a paper or preprint, add the final citation here once available.
-
-Example:
-
-```text
-Author. "GridBERT: Domain-Adaptive BERT for Electric-Grid Reliability Text Classification." Year.
-```
-
+Baker, P. C. (2026). *GridBERT: A Domain-Adapted BERT
+Model for U.S. Electric-Grid Policy* (Version 0.3)
+[Computer software]. Zenodo.
+https://doi.org/10.5281/zenodo.24544637
 ---
 
 # Notes

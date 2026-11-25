@@ -12,7 +12,8 @@ authors:
     orcid: https://orcid.org/0009-0000-1319-6514
 
 version: "0.3"
-
+doi: "10.5281/zenodo.24544637"
+date-released: "2026-11-25"
 license: "Apache-2.0"
 
 abstract: >
