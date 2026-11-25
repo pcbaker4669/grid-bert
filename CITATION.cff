@@ -1,7 +1,7 @@
 cff-version: 1.2.0
 message: "If you use GridBERT in your research, please cite this software."
 
-title: "GridBERT: Domain-Adaptive Pretraining for Electric-Grid Reliability Classification"
+title: "GridBERT: A Domain-Adapted BERT Model for U.S. Electric-Grid Policy"
 
 type: software
 

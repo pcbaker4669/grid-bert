@@ -870,6 +870,17 @@ The paired McNemar tests did not reach conventional statistical significance, so
 
 ---
 
+# License
+
+The GridBERT source code is licensed under the Apache
+License 2.0. See [LICENSE](LICENSE) for details.
+
+GridBERT is based on google-bert/bert-base-uncased,
+which is also licensed under Apache 2.0.
+
+Third-party document content remains subject to its
+original copyright and licensing terms.
+
 # Citation
 
 If this repository accompanies a paper or preprint, add the final citation here once available.
